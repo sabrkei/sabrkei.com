@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>404 – Page Not Found | GBG-Web</title>
+  <meta name="description" content="Page not found. Return to the GBG-Web portfolio of Scott Abraham Keinström, freelance front-end developer in Gothenburg.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/png" href="images/sabrkei-fav.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;700&display=swap">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      background: #000;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+    }
+
+    .page {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      padding: 40px 20px;
+      background: linear-gradient(to bottom, #1a4a7a 0%, #000 100%);
+      text-align: center;
+    }
+
+    .logo {
+      width: 180px;
+      height: auto;
+    }
+
+    .code {
+      font-family: 'Lora', serif;
+      font-size: clamp(5rem, 20vw, 9rem);
+      font-weight: 700;
+      color: #60a5fa;
+      line-height: 1;
+    }
+
+    .message {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 360px;
+      line-height: 1.6;
+    }
+
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: #60a5fa;
+      color: #000;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .home-link:hover {
+      background: #93c5fd;
+    }
+
+    .home-link:focus-visible {
+      outline: 3px solid #93c5fd;
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <img src="images/sabrkei.png" alt="GBG-Web" class="logo" width="180" height="69">
+    <p class="code">404</p>
+    <p class="message">This page doesn't exist. Head back to the portfolio.</p>
+    <a href="/" class="home-link">Go Home</a>
+  </div>
+</body>
+
+</html>

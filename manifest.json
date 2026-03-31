@@ -1,0 +1,24 @@
+{
+  "id": "/",
+  "name": "GBG-Web | Scott Abraham Keinström",
+  "short_name": "GBG-Web",
+  "description": "Freelance front-end developer in Gothenburg, Sweden. Custom websites built with Vue.js, React & Node.js.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "lang": "en",
+  "categories": ["portfolio", "business"],
+  "icons": [
+    { "src": "images/sabrkei-fav.png",  "sizes": "72x72",   "type": "image/png" },
+    { "src": "images/sabrkei-fav.png",  "sizes": "96x96",   "type": "image/png" },
+    { "src": "images/sabrkei-fav.png", "sizes": "128x128", "type": "image/png" },
+    { "src": "images/sabrkei-fav.png", "sizes": "144x144", "type": "image/png" },
+    { "src": "images/sabrkei-fav.png", "sizes": "152x152", "type": "image/png" },
+    { "src": "images/sabrkei-fav.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "images/sabrkei-fav.png", "sizes": "384x384", "type": "image/png" },
+    { "src": "images/sabrkei-fav.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
