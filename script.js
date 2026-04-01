@@ -131,8 +131,19 @@ createApp({
       {
         title: 'Dance Spectacular',
         description: 'dancespectacular.us — Dance event in Clearwater, Florida',
-        image: 'images/nyds.webp',
+        mockup: 'images/mockups/dsmockup.png',
         link: 'https://dancespectacular.us',
+        stack: [
+          { name: 'HTML5',      icon: `${DI}/html5/html5-original.svg` },
+          { name: 'CSS3',       icon: `${DI}/css3/css3-original.svg` },
+          { name: 'JavaScript', icon: `${DI}/javascript/javascript-original.svg` },
+        ],
+      },
+      {
+        title: 'LA Survey',
+        description: 'la-survey.se — LA Survey specializes in high-resolution documentation of complex underwater structures',
+        mockup: 'images/mockups/lamockup.png',
+        link: 'https://la-survey.se',
         stack: [
           { name: 'HTML5',      icon: `${DI}/html5/html5-original.svg` },
           { name: 'CSS3',       icon: `${DI}/css3/css3-original.svg` },
@@ -142,7 +153,7 @@ createApp({
       {
         title: 'Locksafe',
         description: 'locksafe.se — Swedish security company',
-        image: 'images/locksafe_cinema-1.webp',
+        mockup: 'images/mockups/lsmockup.png',
         link: 'https://locksafe.se',
         stack: [
           { name: 'HTML5',      icon: `${DI}/html5/html5-original.svg` },

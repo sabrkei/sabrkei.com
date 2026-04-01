@@ -361,7 +361,7 @@
             <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>
             <span>Home</span>
           </button>
-          <img src="images/sabrkei.png" alt="GBG-Web" class="section-logo" width="120" height="47">
+          <img src="images/sabrkei-sectionlogo.png" alt="GBG-Web" class="section-logo" width="120" height="47">
         </nav>
 
         <!-- ── PORTFOLIO ── -->
@@ -406,27 +406,26 @@
               <div class="portfolio-section-header">
                 <h3 class="section-label" id="heading-sitebuilds">Site Builds</h3>
               </div>
-              <ul class="project-list">
-                <li
-                  v-for="(project, index) in siteBuilds"
-                  :key="project.title"
-                  class="project-row"
-                  :style="{ '--thumb': 'url(' + project.image + ')' }"
-                >
-                  <span class="project-row__num" aria-hidden="true">{{ String(index + 1).padStart(2, '0') }}</span>
-                  <div class="project-row__info">
-                    <h3 class="project-row__title">{{ project.title }}</h3>
-                    <p class="project-row__desc">{{ project.description }}</p>
+              <div class="site-builds-grid">
+                <article v-for="project in siteBuilds" :key="project.title" class="site-build-card">
+                  <div class="site-build-card__img-wrap">
+                    <img :src="project.mockup" :alt="project.title + ' — site screenshot'" class="site-build-card__img" loading="lazy">
                   </div>
-                  <div class="project-row__stack" aria-hidden="true">
-                    <img v-for="tech in project.stack" :key="tech.name" :src="tech.icon" :alt="tech.name" :title="tech.name" class="stack-icon" width="20" height="20" loading="lazy">
+                  <div class="site-build-card__body">
+                    <h3 class="site-build-card__title">{{ project.title }}</h3>
+                    <p class="site-build-card__desc">{{ project.description }}</p>
+                    <div class="site-build-card__footer">
+                      <div class="site-build-card__stack" aria-hidden="true">
+                        <img v-for="tech in project.stack" :key="tech.name" :src="tech.icon" :alt="tech.name" :title="tech.name" class="stack-icon" width="20" height="20" loading="lazy">
+                      </div>
+                      <a :href="project.link" target="_blank" rel="noopener noreferrer" class="site-build-card__link" :aria-label="project.title + ' — visit live site'">
+                        Live Site
+                        <svg class="icon" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
+                      </a>
+                    </div>
                   </div>
-                  <a :href="project.link" target="_blank" rel="noopener noreferrer" class="project-row__link" :aria-label="project.title + ' — visit live site'">
-                    <span class="project-row__tag" aria-hidden="true">Live Site</span>
-                    <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
-                  </a>
-                </li>
-              </ul>
+                </article>
+              </div>
             </section>
 
             <section class="portfolio-section portfolio-section--npm" aria-labelledby="heading-npmbuilds">

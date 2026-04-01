@@ -1,0 +1,24 @@
+{
+  "name": "sabrkei.com",
+  "version": "1.0.0",
+  "description": "A modern, responsive portfolio website for Scott, a front-end developer and designer based in Gothenburg, Sweden.",
+  "homepage": "https://github.com/sabrkei/sabrkei.com#readme",
+  "bugs": {
+    "url": "https://github.com/sabrkei/sabrkei.com/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sabrkei/sabrkei.com.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "vite"
+  },
+  "dependencies": {
+    "vite": "^8.0.3"
+  }
+}
