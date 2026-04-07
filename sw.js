@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gbg-web-v2';
+const CACHE_NAME = 'gbg-web-v3';
 
 const PRECACHE_ASSETS = [
   '/',
@@ -7,7 +7,7 @@ const PRECACHE_ASSETS = [
   '/script.js',
   '/vue.global.prod.js',
   '/manifest.json',
-  '/images/sabrkei-fav.png',
+  '/images/sabrkei-favicon.png',
   '/images/sabrkei.png',
   '/images/profilephoto.webp',
   '/images/icon-js.webp',

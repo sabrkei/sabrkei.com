@@ -1212,8 +1212,8 @@ select {
   body { overflow-x: hidden; }
   .site-builds-grid { grid-template-columns: 1fr; padding: 20px 18px; gap: 16px; }
 
-  .home-screen { gap: 0; position: relative; justify-content: flex-start; padding-top: 52px; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 90px); }
-  .home-logo { height: 420px; }
+  .home-screen { gap: 0; position: relative; justify-content: flex-start; padding-top: 40px; padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 90px); }
+  .home-logo { height: 180px; }
   .home-tagline { font-size: 0.7rem; letter-spacing: 2px; margin-top: 8px; margin-bottom: 0; }
   .home-socials {
     position: absolute;
@@ -1231,8 +1231,8 @@ select {
     white-space: nowrap;
   }
 
-  .app-dock { gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 260px; margin-top: auto; margin-bottom: auto; }
-  .app-icon { width: 96px; height: 96px; border-radius: 24px; }
+  .app-dock { gap: 16px; flex-wrap: wrap; justify-content: center; max-width: 240px; margin-top: auto; margin-bottom: auto; }
+  .app-icon { width: 88px; height: 88px; border-radius: 22px; }
   .app-label { font-size: 0.7rem; }
 
   .section-nav { padding: 10px 16px; }
