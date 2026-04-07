@@ -67,7 +67,7 @@ createApp({
     const formData = reactive({ name: '', email: '', message: '' });
     const formLoading = ref(false);
     const formStatus = reactive({ type: '', message: '' });
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xjgywnje';
+    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mlgozolk';
     let formStatusTimeout = null;
 
     // Project data
