@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gbg-web.com/sitemap.xml
+Sitemap: https://sabrkei.com/sitemap.xml

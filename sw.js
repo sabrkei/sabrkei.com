@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gbg-web-v4';
+const CACHE_NAME = 'sabrkei-v4';
 
 // Derive base path from SW location so this works in any subfolder
 // e.g. /sabrkei.com/sw.js → BASE = '/sabrkei.com/'

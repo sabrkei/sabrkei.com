@@ -128,8 +128,8 @@ Edit the `projects` or `customerProjects` arrays in `script.js`:
 
 ## Contact
 
-- Email: contact@gbg-web.com
-- Website: [gbg-web.com](https://gbg-web.com)
+- Email: contact@sabrkei.com
+- Website: [sabrkei.com](https://sabrkei.com)
 - LinkedIn: [scottabrahamkeinstrom](https://www.linkedin.com/in/scottabrahamkeinstrom/)
 - GitHub: [sabrkei](https://github.com/sabrkei)
 
