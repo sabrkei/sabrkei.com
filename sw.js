@@ -1,25 +1,30 @@
-const CACHE_NAME = 'gbg-web-v3';
+const CACHE_NAME = 'gbg-web-v4';
+
+// Derive base path from SW location so this works in any subfolder
+// e.g. /sabrkei.com/sw.js → BASE = '/sabrkei.com/'
+//      /sw.js              → BASE = '/'
+const BASE = self.location.pathname.replace(/sw\.js$/, '');
 
 const PRECACHE_ASSETS = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/vue.global.prod.js',
-  '/manifest.json',
-  '/images/sabrkei-favicon.png',
-  '/images/sabrkei.png',
-  '/images/profilephoto.webp',
-  '/images/icon-js.webp',
-  '/images/icon-vuejs.webp',
-  '/images/icon-react.webp',
-  '/images/icon-nodejs.webp',
-  '/images/icon-html5.webp',
-  '/images/icon-css3.webp',
-  '/images/icon-sass.webp',
-  '/images/icon-git.webp',
-  '/images/icon-wordpress.webp',
-  '/images/icon-ts.webp'
+  BASE,
+  BASE + 'index.html',
+  BASE + 'style.css',
+  BASE + 'script.js',
+  BASE + 'vue.global.prod.js',
+  BASE + 'manifest.json',
+  BASE + 'images/sabrkei-favicon.png',
+  BASE + 'images/sabrkei.png',
+  BASE + 'images/profilephoto.webp',
+  BASE + 'images/icon-js.webp',
+  BASE + 'images/icon-vuejs.webp',
+  BASE + 'images/icon-react.webp',
+  BASE + 'images/icon-nodejs.webp',
+  BASE + 'images/icon-html5.webp',
+  BASE + 'images/icon-css3.webp',
+  BASE + 'images/icon-sass.webp',
+  BASE + 'images/icon-git.webp',
+  BASE + 'images/icon-wordpress.webp',
+  BASE + 'images/icon-ts.webp'
 ];
 
 // Install: precache all core assets
@@ -59,7 +64,7 @@ self.addEventListener('fetch', event => {
           caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
           return response;
         })
-        .catch(() => caches.match('/index.html'))
+        .catch(() => caches.match(BASE + 'index.html'))
     );
     return;
   }

@@ -10,13 +10,13 @@ createApp({
     const openSection = (name) => {
       lastFocusedElement = document.activeElement;
       activeSection.value = name;
-      history.pushState(null, '', '/' + name);
+      history.pushState(null, '', name);
       nextTick(() => document.querySelector('.back-btn')?.focus());
     };
 
     const goHome = () => {
       activeSection.value = null;
-      history.pushState(null, '', '/');
+      history.pushState(null, '', './');
       nextTick(() => lastFocusedElement?.focus());
     };
 
@@ -24,15 +24,20 @@ createApp({
       if (e.key === 'Escape' && activeSection.value) goHome();
     };
 
+    const getPathSection = () => {
+      const segments = window.location.pathname.split('/').filter(Boolean);
+      return segments[segments.length - 1] || '';
+    };
+
     const onPopState = () => {
-      const path = window.location.pathname.slice(1);
+      const path = getPathSection();
       const hash = window.location.hash.slice(1);
       const section = VALID_SECTIONS.includes(path) ? path
                     : VALID_SECTIONS.includes(hash) ? hash
                     : null;
       if (section) {
         activeSection.value = section;
-        if (hash) history.replaceState(null, '', '/' + section);
+        if (hash) history.replaceState(null, '', section);
         nextTick(() => document.querySelector('.back-btn')?.focus());
       } else {
         activeSection.value = null;
@@ -42,14 +47,14 @@ createApp({
     onMounted(() => {
       window.addEventListener('keydown', onKeydown);
       window.addEventListener('popstate', onPopState);
-      const path = window.location.pathname.slice(1);
+      const path = getPathSection();
       const hash = window.location.hash.slice(1);
       const section = VALID_SECTIONS.includes(path) ? path
                     : VALID_SECTIONS.includes(hash) ? hash
                     : null;
       if (section) {
         activeSection.value = section;
-        if (hash) history.replaceState(null, '', '/' + section);
+        if (hash) history.replaceState(null, '', section);
       }
     });
 
