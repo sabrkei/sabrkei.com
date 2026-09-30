@@ -39,31 +39,29 @@ This is a single-page portfolio application built with Vue 3, featuring an app-l
 ├── index.html          # Main HTML file with Vue app
 ├── style.css           # All styles with CSS variables
 ├── script.js           # Vue 3 application logic
+├── vue.global.prod.js  # Vue 3 production build (self-hosted)
+├── sw.js               # Service worker (offline cache)
+├── manifest.json       # PWA manifest
+├── 404.html            # Custom 404 page
+├── cv.html             # Redirect to cv/cv.html (keeps old links working)
 ├── .gitignore          # Git ignore rules
 ├── README.md           # This file
 ├── robots.txt          # SEO crawler directives
 ├── sitemap.xml         # SEO sitemap
 ├── CNAME               # GitHub Pages custom domain
 │
-├── images/             # All image assets (WebP format)
-│   ├── gbg-web.webp
-│   ├── profilephoto.webp
-│   ├── hero-poster.webp
-│   ├── thedailygrindlogo.webp
-│   ├── unitedbysound.webp
-│   ├── footballstatshublogo.webp
-│   ├── nyds.webp
-│   └── locksafe_cinema-1.webp
+├── about/, contact/, portfolio/, stackcv/
+│   └── index.html      # SEO-friendly redirects to SPA sections
 │
-├── videos/
-│   ├── hero.mp4        # Hero section background video
-│   └── family.mp4      # About section video
+├── cv/
+│   ├── cv.html         # HTML CV (embedded in Stack & CV)
+│   └── qr-*.png        # QR codes shown on the CV
 │
-├── audio/
-│   └── switch.mp3      # Theme toggle sound effect
+├── images/             # Logos, tech-stack icons, profile photo
+│   └── mockups/        # Project mockups used in the portfolio
 │
-└── assets/
-    └── SAKCV.pdf       # Resume/CV document
+└── videos/
+    └── family.mp4      # About section video
 ```
 
 ## Sections
@@ -71,7 +69,7 @@ This is a single-page portfolio application built with Vue 3, featuring an app-l
 1. **Home** - Hero screen with app dock
 2. **Portfolio** - List view of personal and client projects
 3. **About Me** - Personal story with split-screen video layout
-4. **Stack & CV** - Technical skills grid and embedded PDF CV
+4. **Stack & CV** - Technical skills grid and embedded HTML CV
 5. **Contact** - Integrated contact form
 
 ## Getting Started

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sabrkei-v7';
+const CACHE_NAME = 'sabrkei-v8';
 
 // Derive base path from SW location so this works in any subfolder
 // e.g. /sabrkei.com/sw.js → BASE = '/sabrkei.com/'
@@ -25,7 +25,7 @@ const PRECACHE_ASSETS = [
   BASE + 'images/icon-sass.webp',
   BASE + 'images/icon-git.webp',
   BASE + 'images/icon-wordpress.webp',
-  BASE + 'images/icon-ts.webp'
+  BASE + 'images/icon-ts.svg'
 ];
 
 // Install: precache all core assets
