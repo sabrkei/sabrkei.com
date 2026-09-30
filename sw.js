@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sabrkei-v8';
+const CACHE_NAME = 'sabrkei-v9';
 
 // Derive base path from SW location so this works in any subfolder
 // e.g. /sabrkei.com/sw.js → BASE = '/sabrkei.com/'
@@ -13,6 +13,11 @@ const PRECACHE_ASSETS = [
   BASE + 'vue.global.prod.js',
   BASE + 'manifest.json',
   BASE + 'images/sabrkei-favicon.png',
+  BASE + 'images/icon-192.png',
+  BASE + 'images/icon-512.png',
+  BASE + 'images/icon-maskable-192.png',
+  BASE + 'images/icon-maskable-512.png',
+  BASE + 'images/apple-touch-icon.png',
   BASE + 'images/sabrkei.png',
   BASE + 'images/sabrkei-dark.png',
   BASE + 'images/profilephoto.webp',
