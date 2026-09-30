@@ -14,7 +14,8 @@
     --dark:       #1E1E1C;
     --spine-bg:   #232320;
     --mid:        #4A4845;
-    --muted:      #8A8680;
+    --muted:      #67635D;
+    --gold-text:  #735E2F; /* gold for text on light backgrounds (≥ 4.5:1) */
     --faint:      #F2EFE9;
     --bg:         #E8E4DC;
     --white:      #FFFFFF;
@@ -146,7 +147,7 @@
     border-radius: 3px;
     transition: border-color .15s, color .15s;
   }
-  .print-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .print-btn:hover { border-color: var(--gold-text); color: var(--gold-text); }
 
   /* ── LAYOUT ── */
   .layout {
@@ -219,7 +220,7 @@
     font-weight: 800;
     letter-spacing: .18em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--gold-text);
   }
   .cv-contact {
     margin-top: 16px;
@@ -228,11 +229,11 @@
     line-height: 2;
   }
   .cv-contact a { color: var(--muted); text-decoration: none; transition: color .12s; }
-  .cv-contact a:hover { color: var(--gold); }
+  .cv-contact a:hover { color: var(--gold-text); }
   .cv-social-links { display: flex; gap: 12px; align-items: center; margin-top: 4px; }
   .cv-social-links a { display: flex; align-items: center; }
   .cv-social-links svg { width: 18px; height: 18px; fill: var(--muted); transition: fill .12s; }
-  .cv-social-links a:hover svg { fill: var(--gold); }
+  .cv-social-links a:hover svg { fill: var(--gold-text); }
 
   /* ── BODY GRID ── */
   .cv-body {
@@ -253,7 +254,7 @@
     font-weight: 800;
     letter-spacing: .22em;
     text-transform: uppercase; 
-    color: var(--gold);
+    color: var(--gold-text);
     margin-bottom: 12px;
     padding-bottom: 7px;
     border-bottom: 1px solid var(--border);
@@ -304,7 +305,7 @@
     font-weight: 800;
     letter-spacing: .22em;
     text-transform: uppercase;
-    color: var(--gold);
+    color: var(--gold-text);
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -319,6 +320,7 @@
   .job-role { font-size: 12px; color: var(--mid); margin-top: 1px; }
   .job-period { font-size: 11px; color: var(--muted); white-space: nowrap; flex-shrink: 0; padding-top: 1px; }
   .job-location { font-size: 11px; color: var(--muted); margin-bottom: 8px; margin-top: 3px; }
+  .job-location a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
   .bullets { list-style: none; }
   .bullets li {
     font-size: 12px;
@@ -521,7 +523,17 @@
 
       <div class="sb-section" style="text-align:left;">
         <div class="sb-label">Dev Portfolio</div>
-        <img src="qr-code.png" alt="QR code" style="width:100%;max-width:160px;display:block;margin:0 auto;border-radius:4px;">
+        <img src="cv/qr-code.png" alt="QR code linking to my dev portfolio at sabrkei.com" style="width:100%;max-width:160px;display:block;margin:0 auto;border-radius:4px;">
+      </div>
+
+      <div class="sb-section" style="text-align:left;">
+        <div class="sb-label"><span class="sv">Frilans – GBG Web</span><span class="en">Freelance – GBG Web</span></div>
+        <img src="cv/qr-gbgweb.png?v=2" alt="QR code linking to my freelance web development business at gbg-web.com" style="width:100%;max-width:160px;display:block;margin:0 auto;border-radius:4px;">
+      </div>
+
+      <div class="sb-section" style="text-align:left;">
+        <div class="sb-label"><span class="sv">Appar – Problem Solved</span><span class="en">Apps – Problem Solved</span></div>
+        <img src="cv/qr-ps.png?v=2" alt="QR code linking to my app studio Problem Solved at problem-solved.app" style="width:100%;max-width:160px;display:block;margin:0 auto;border-radius:4px;">
       </div>
 
     </aside>
@@ -537,6 +549,26 @@
 
       <div class="section">
         <div class="section-title"><span class="sv">Erfarenhet</span><span class="en">Experience</span></div>
+
+        <div class="job">
+          <div class="job-header">
+            <div><div class="job-company">PROBLEM SOLVED</div><div class="job-role"><span class="sv">Grundare &amp; ensam apputvecklare</span><span class="en">Founder &amp; Solo App Developer</span></div></div>
+            <div class="job-period"><span class="sv">Pågående</span><span class="en">Ongoing</span></div>
+          </div>
+          <div class="job-location"><span class="sv">Egen verksamhet</span><span class="en">Self-employed</span> &middot; <a href="https://www.problem-solved.app/" target="_blank" rel="noopener noreferrer">problem-solved.app</a></div>
+          <ul class="bullets sv"><li>Oberoende appstudio som bygger små, fokuserade appar som löser verkliga vardagsproblem</li><li>Designar, utvecklar och lanserar varje app på egen hand – från idé till release</li><li>Utvecklar Party Pal, en app för att planera barnkalas på några minuter (kommer snart)</li><li>Vidareutvecklar apparna utifrån feedback från riktiga användare</li></ul>
+          <ul class="bullets en"><li>Independent app studio building small, focused apps that solve real everyday problems</li><li>Design, build and ship every app single-handedly, from idea to release</li><li>Developing Party Pal, an app for planning a child's birthday party in minutes (coming soon)</li><li>Iterate on each app based on feedback from real users</li></ul>
+        </div>
+
+        <div class="job">
+          <div class="job-header">
+            <div><div class="job-company">GBG WEB</div><div class="job-role"><span class="sv">Frilansande webbutvecklare</span><span class="en">Freelance Web Developer</span></div></div>
+            <div class="job-period"><span class="sv">Pågående</span><span class="en">Ongoing</span></div>
+          </div>
+          <div class="job-location">Göteborg, Sverige &middot; <span class="sv">Egen verksamhet</span><span class="en">Self-employed</span> &middot; <a href="https://www.gbg-web.com/" target="_blank" rel="noopener noreferrer">gbg-web.com</a></div>
+          <ul class="bullets sv"><li>Egen frilansverksamhet som bygger snabba, moderna hemsidor för småföretag</li><li>Webbdesign och webbutveckling från första skiss till lansering</li><li>Migrering av befintliga webbplatser samt SEO- och AEO-optimering</li><li>Löpande support och kontakt direkt med kunden – utan byråavgifter</li></ul>
+          <ul class="bullets en"><li>Own freelance business building fast, modern websites for small businesses</li><li>Web design and development from first sketch to launch</li><li>Website migrations plus SEO and AEO optimisation</li><li>Ongoing support, working directly with clients – no agency overheads</li></ul>
+        </div>
 
         <div class="job">
           <div class="job-header">

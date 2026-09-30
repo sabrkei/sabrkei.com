@@ -73,7 +73,8 @@
     "url": "https://sabrkei.com/",
     "image": "https://sabrkei.com/images/profilephoto.webp",
     "jobTitle": "Front-End Developer",
-    "description": "Freelance front-end developer based in Gothenburg, Sweden. Specialising in Vue.js, React and Node.js. Available for custom website projects locally in Gothenburg and remotely across Sweden and internationally.",
+    "description": "Freelance front-end developer based in Gothenburg, Sweden, and solo developer of Problem Solved apps (problem-solved.app). Specialising in Vue.js, React and Node.js. Freelance development services available via gbg-web.com, locally in Gothenburg and remotely across Sweden and internationally.",
+    "sameAs": ["https://www.problem-solved.app/", "https://www.gbg-web.com/"],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Gothenburg",
@@ -247,6 +248,18 @@
     [v-cloak]{display:none!important}
   </style>
 
+  <!-- Theme: apply saved choice (or OS preference) before first paint -->
+  <script>
+    (function () {
+      var theme;
+      try { theme = localStorage.getItem('theme'); } catch (e) {}
+      if (theme !== 'dark' && theme !== 'light') {
+        theme = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="style.css"></noscript>
@@ -275,6 +288,10 @@
     <symbol id="icon-github" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></symbol>
     <symbol id="icon-codepen" viewBox="0 0 512 512"><path d="M502.285 159.704l-234-156c-7.987-4.915-16.511-4.96-24.571 0l-234 156C3.714 163.703 0 170.847 0 177.989v155.999c0 7.143 3.714 14.286 9.715 18.286l234 156.022c7.987 4.915 16.511 4.96 24.571 0l234-156.022c6-3.999 9.715-11.143 9.715-18.286V177.989c-.001-7.142-3.715-14.286-9.716-18.285zM278 63.131l172.286 114.858-76.857 51.429L278 165.703V63.131zm-44 0v102.572l-95.429 63.715-76.857-51.429L234 63.131zM44 219.132l55.143 36.857L44 292.846v-73.714zm190 229.715L61.714 333.989l76.857-51.429L234 346.275v102.572zm22-140.858l-77.715-52 77.715-52 77.715 52-77.715 52zm22 140.858V346.275l95.429-63.715 76.857 51.429L278 448.847zm190-156.001l-55.143-36.857L468 219.132v73.714z"/></symbol>
     <symbol id="icon-npm" viewBox="0 0 24 24"><path d="M1.763 0C.786 0 0 .786 0 1.763v20.474C0 23.214.786 24 1.763 24h20.474c.977 0 1.763-.786 1.763-1.763V1.763C24 .786 23.214 0 22.237 0zM5.13 5.323l13.837.019-.009 13.836h-3.464l.01-10.382h-3.456L12.04 19.17H5.113z"/></symbol>
+    <symbol id="icon-play" viewBox="0 0 16 16"><path d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393"/></symbol>
+    <symbol id="icon-pause" viewBox="0 0 16 16"><path d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5"/></symbol>
+    <symbol id="icon-moon"viewBox="0 0 16 16"><path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/></symbol>
+    <symbol id="icon-sun" viewBox="0 0 16 16"><path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708"/></symbol>
     <symbol id="icon-arrow-left" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/></symbol>
     <symbol id="icon-arrow-right" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></symbol>
     <symbol id="icon-envelope" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></symbol>
@@ -293,7 +310,7 @@
     <!-- ── HOME SCREEN ── -->
     <main class="home-screen" id="main-content" :aria-hidden="activeSection ? 'true' : null">
       <h1 class="sr-only">Scott Abraham Keinström — Webbutvecklare &amp; Front-End Developer i Göteborg</h1>
-      <img src="images/sabrkei.png" alt="GBG-Web — Scott Abraham Keinström, webbutvecklare i Göteborg" class="home-logo" width="220" height="85" fetchpriority="high">
+      <img :src="isDark ? 'images/sabrkei-dark.png' : 'images/sabrkei.png'" alt="sabrkei dev portfolio — Scott Abraham Keinström, webbutvecklare i Göteborg" class="home-logo" width="220" height="85" fetchpriority="high">
       <p class="home-tagline">Front-End Developer &middot; Gothenburg</p>
       <p class="home-intro sr-only">Webbutvecklare &amp; front-end developer i Göteborg, specialiserad på Vue.js, React och Node.js. Söker LIA-plats och uppdrag inom webbutveckling.</p>
 
@@ -340,6 +357,9 @@
         <a href="https://www.npmjs.com/~sabrkei" target="_blank" rel="noopener noreferrer" aria-label="npm profile">
           <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-npm"></use></svg>
         </a>
+        <button type="button" class="theme-toggle" @click="toggleTheme" :aria-pressed="isDark ? 'true' : 'false'" aria-label="Dark mode" :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'">
+          <svg class="icon icon-lg" aria-hidden="true"><use :href="isDark ? '#icon-sun' : '#icon-moon'"></use></svg>
+        </button>
       </nav>
 
       <p class="home-copyright"><small>sabrkei &copy; 2026</small></p>
@@ -361,7 +381,12 @@
             <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-arrow-left"></use></svg>
             <span>Home</span>
           </button>
-          <img src="images/sabrkei-sectionlogo.png" alt="GBG-Web" class="section-logo" width="120" height="47">
+          <div class="section-nav__end">
+            <button type="button" class="theme-toggle" @click="toggleTheme" :aria-pressed="isDark ? 'true' : 'false'" aria-label="Dark mode" :title="isDark ? 'Switch to light mode' : 'Switch to dark mode'">
+              <svg class="icon icon-lg" aria-hidden="true"><use :href="isDark ? '#icon-sun' : '#icon-moon'"></use></svg>
+            </button>
+            <img src="images/sabrkei-sectionlogo.png" alt="sabrkei" class="section-logo" width="120" height="47">
+          </div>
         </nav>
 
         <!-- ── PORTFOLIO ── -->
@@ -369,32 +394,69 @@
           <div class="portfolio-content">
             <h2 class="sr-only">Portfolio</h2>
 
-            <section class="portfolio-section" aria-labelledby="heading-projects">
+            <section class="portfolio-section" aria-labelledby="heading-apps">
+              <div class="portfolio-section-header">
+                <h3 class="section-label" id="heading-apps">Apps</h3>
+              </div>
+              <ul class="project-list">
+                <li class="project-row" style="--thumb: url('images/problemsolved-logo.png')">
+                  <a href="https://www.problem-solved.app/" target="_blank" rel="noopener noreferrer" class="project-row__logo-link" aria-label="Problem Solved — visit problem-solved.app"><img src="images/problemsolved-logo.png" alt="" class="project-row__logo" width="48" height="48" loading="lazy"></a>
+                  <div class="project-row__info">
+                    <h3 class="project-row__title">Problem Solved</h3>
+                    <p class="project-row__desc">Solo developer — a one-person studio building simple apps for everyday hassles.</p>
+                  </div>
+                  <div class="project-row__stack" aria-hidden="true"></div>
+                  <div class="project-row__links">
+                    <a href="https://www.problem-solved.app/" target="_blank" rel="noopener noreferrer" class="project-row__link project-row__link--live" aria-label="Problem Solved — view live site">
+                      <span class="project-row__tag" aria-hidden="true">Live Site</span>
+                      <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="portfolio-section portfolio-section--builds" aria-labelledby="heading-freelance">
+              <div class="portfolio-section-header">
+                <h3 class="section-label" id="heading-freelance">Freelance</h3>
+              </div>
+              <ul class="project-list">
+                <li class="project-row" style="--thumb: url('images/gbgweb-logo.png')">
+                  <a href="https://www.gbg-web.com/" target="_blank" rel="noopener noreferrer" class="project-row__logo-link" aria-label="GBG Web — visit gbg-web.com"><img src="images/gbgweb-logo.png" alt="" class="project-row__logo" width="48" height="48" loading="lazy"></a>
+                  <div class="project-row__info">
+                    <h3 class="project-row__title">GBG Web</h3>
+                    <p class="project-row__desc">Freelance web design, development, site migrations and SEO/AEO in Gothenburg.</p>
+                  </div>
+                  <div class="project-row__stack" aria-hidden="true"></div>
+                  <div class="project-row__links">
+                    <a href="https://www.gbg-web.com/" target="_blank" rel="noopener noreferrer" class="project-row__link project-row__link--live" aria-label="GBG Web — view live site">
+                      <span class="project-row__tag" aria-hidden="true">Live Site</span>
+                      <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </section>
+
+            <section class="portfolio-section portfolio-section--builds" aria-labelledby="heading-projects">
               <div class="portfolio-section-header">
                 <h3 class="section-label" id="heading-projects">Projects</h3>
               </div>
               <ul class="project-list">
-                <li
-                  v-for="(project, index) in personalProjects"
-                  :key="project.title"
-                  class="project-row"
-                  :style="{ '--thumb': 'url(' + project.image + ')' }"
-                >
-                  <span class="project-row__num" aria-hidden="true">{{ String(index + 1).padStart(2, '0') }}</span>
+                <li class="project-row" style="--thumb: url('images/github-avatar.png')">
+                  <a href="https://github.com/sabrkei?tab=repositories" target="_blank" rel="noopener noreferrer" class="project-row__logo-link" aria-label="View all public repositories on GitHub"><svg class="project-row__logo project-row__logo--icon" aria-hidden="true"><use href="#icon-github"></use></svg></a>
                   <div class="project-row__info">
-                    <h3 class="project-row__title">{{ project.title }}</h3>
-                    <p class="project-row__desc">{{ project.description }}</p>
+                    <h3 class="project-row__title">GitHub Repositories</h3>
+                    <p class="project-row__desc">All my public projects — from HTML/CSS layouts to Vue, React and Node.js apps.</p>
                   </div>
-                  <div class="project-row__stack" aria-hidden="true">
-                    <img v-for="tech in project.stack" :key="tech.name" :src="tech.icon" :alt="tech.name" :title="tech.name" class="stack-icon" width="20" height="20" loading="lazy">
-                  </div>
+                  <div class="project-row__stack" aria-hidden="true"></div>
                   <div class="project-row__links">
-                    <a :href="project.link" target="_blank" rel="noopener noreferrer" class="project-row__link" :aria-label="project.title + ' — view on GitHub'">
-                      <span class="project-row__tag" aria-hidden="true">GitHub</span>
+                    <a href="https://github.com/sabrkei?tab=repositories" target="_blank" rel="noopener noreferrer" class="project-row__link" aria-label="View all public repositories on GitHub">
+                      <span class="project-row__tag" aria-hidden="true">Repos</span>
                       <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
                     </a>
-                    <a v-if="project.liveUrl" :href="project.liveUrl" target="_blank" rel="noopener noreferrer" class="project-row__link project-row__link--live" :aria-label="project.title + ' — view live site'">
-                      <span class="project-row__tag" aria-hidden="true">Live Site</span>
+                    <a href="https://github.com/sabrkei" target="_blank" rel="noopener noreferrer" class="project-row__link project-row__link--live" aria-label="View GitHub profile">
+                      <span class="project-row__tag" aria-hidden="true">GitHub</span>
                       <svg class="icon icon-lg" aria-hidden="true"><use href="#icon-arrow-right"></use></svg>
                     </a>
                   </div>
@@ -491,22 +553,31 @@
             <p>My journey started in England with Lego and sketchpads, fueled by a drive to create things from scratch. While I spent several years building a career in the corporate IT world, I eventually realized I was missing that original creative spark. In 2024, I decided to turn a redundancy into an opportunity: at 37, I took the leap to study web development and bridge the gap between technical logic and artistic design.</p>
 
             <p><strong>My Philosophy</strong><br>
-            I believe technology should feel human. My goal is to build interfaces that are beautiful, intuitive, and genuinely fun to use. I'm trading &ldquo;comfortable&rdquo; for &ldquo;inspired,&rdquo; tackling code with the same curiosity I had as a kid&mdash;just with better tools.</p>
+            I believe in building things that are genuinely useful for people. Having grown up in a world both with and without the internet, I'm very conscious of how the ever-evolving digital world shapes our lives, and the effect it will have on future generations. That's why I build responsibly: I want to create things that genuinely improve people's lives and make them more productive, so we can spend more time on the things in life that matter most.</p>
 
             <p><strong>Beyond the Code</strong><br>
-            When I'm not at my desk, I'm usually training or keeping up with my three children, who are constant reminders that the best ideas come from staying curious.</p>
+            When I'm not at my desk, I'm usually training or keeping up with my four children, who are constant reminders that the best ideas come from staying curious.</p>
+
+            <p><strong>Problem Solved</strong><br>
+            I'm the solo developer behind <strong><a href="https://www.problem-solved.app/" target="_blank" rel="noopener noreferrer">Problem Solved</a></strong>, a one-person app studio building simple, well-crafted apps for everyday hassles. Every app is designed, built and shipped by me.</p>
 
             <p><strong>Freelance Work</strong><br>
-            Alongside my studies, I run my own freelance web design business, <strong><a href="https://www.gbg-web.com" target="_blank" rel="noopener noreferrer">gbg-web.com</a></strong>, offering web design and development, site migrations, and SEO/AEO optimization for clients in Gothenburg and beyond.</p>
+            I also offer freelance development work. Through my business, <strong><a href="https://www.gbg-web.com" target="_blank" rel="noopener noreferrer">gbg-web.com</a></strong>, I provide web design and development, site migrations, and SEO/AEO optimization for clients in Gothenburg and beyond&mdash;you can find my services there.</p>
 
             <p>Let's connect: <strong><a href="mailto:scottabraham87@gmail.com">scottabraham87@gmail.com</a></strong></p>
           </div>
 
-          <div class="about-video-side">
-            <video class="about-video" autoplay muted loop playsinline preload="none" poster="images/family.webp" aria-label="Family video">
+          <figure class="about-video-side">
+            <!-- Silent video (no audio track), so no captions are needed; the text description below covers its content -->
+            <video ref="aboutVideo" id="about-video" class="about-video" :autoplay="!prefersReducedMotion" muted loop playsinline preload="none" poster="images/family.webp" aria-describedby="about-video-desc" @play="videoPaused = false" @pause="videoPaused = true">
               <source src="videos/family.mp4" type="video/mp4">
             </video>
-          </div>
+            <figcaption id="about-video-desc" class="sr-only">Silent animated family portrait in an oil-painting style: a smiling woman sits on the floor with two young children, all three stretching their arms out wide.</figcaption>
+            <button type="button" class="video-toggle" @click="toggleVideo" aria-controls="about-video">
+              <svg class="icon" aria-hidden="true"><use :href="videoPaused ? '#icon-play' : '#icon-pause'"></use></svg>
+              <span>{{ videoPaused ? 'Play animation' : 'Pause animation' }}</span>
+            </button>
+          </figure>
 
         </div>
 
@@ -578,9 +649,9 @@
           <div class="stackcv-right">
             <h3 class="section-label">CV</h3>
             <div class="cv-wrapper cv-wrapper--fill">
-              <iframe src="https://sabrkei.com/cv/cv.html" class="cv-iframe" title="Scott Abraham Keinström — CV" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+              <iframe src="cv/cv.html" class="cv-iframe" title="Scott Abraham Keinström — CV" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
               <div class="cv-controls">
-                <a href="https://sabrkei.com/cv/cv.html" target="_blank" rel="noopener noreferrer" aria-label="Open CV in new tab">
+                <a href="cv/cv.html" target="_blank" rel="noopener noreferrer" aria-label="Open CV in new tab">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 448 512" aria-hidden="true"><path d="M32 32C14.3 32 0 46.3 0 64v96c0 17.7 14.3 32 32 32s32-14.3 32-32V96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H32zM64 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7 14.3 32 32 32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H64V352zM320 32c-17.7 0-32 14.3-32 32s14.3 32 32 32h64v64c0 17.7 14.3 32 32 32s32-14.3 32-32V64c0-17.7-14.3-32-32-32H320zM448 352c0-17.7-14.3-32-32-32s-32 14.3-32 32v64H320c-17.7 0-32 14.3-32 32s14.3 32 32 32h96c17.7 0 32-14.3 32-32V352z"/></svg>
                   <span class="sr-only">Open CV</span>
                 </a>

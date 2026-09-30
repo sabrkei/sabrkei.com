@@ -7,6 +7,28 @@ createApp({
 
     const VALID_SECTIONS = ['portfolio', 'about', 'stackcv', 'contact'];
 
+    // Theme (initial value is set on <html> by the inline script in <head>)
+    const isDark = ref(document.documentElement.getAttribute('data-theme') === 'dark');
+
+    const toggleTheme = () => {
+      isDark.value = !isDark.value;
+      const theme = isDark.value ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', theme);
+      try { localStorage.setItem('theme', theme); } catch {}
+    };
+
+    // About video: skip autoplay for reduced-motion users, and always offer pause/play (WCAG 2.2.2)
+    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+    const aboutVideo = ref(null);
+    const videoPaused = ref(prefersReducedMotion);
+
+    const toggleVideo = () => {
+      const video = aboutVideo.value;
+      if (!video) return;
+      if (video.paused) video.play().catch(() => {});
+      else video.pause();
+    };
+
     const openSection = (name) => {
       lastFocusedElement = document.activeElement;
       activeSection.value = name;
@@ -72,65 +94,6 @@ createApp({
 
     // Project data
     const DI = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons';
-
-    const personalProjects = ref([
-      {
-        title: 'The Daily Grind',
-        description: 'First HTML/CSS project focusing on layout.',
-        image: 'images/thedailygrindlogo.webp',
-        link: 'https://github.com/sabrkei/the-daily-grind',
-        liveUrl: 'https://sabrkei.github.io/the-daily-grind',
-        stack: [
-          { name: 'HTML5',  icon: `${DI}/html5/html5-original.svg` },
-          { name: 'CSS3',   icon: `${DI}/css3/css3-original.svg` },
-        ],
-      },
-      {
-        title: 'United by Sound',
-        description: 'UX/UI group project exploring community music.',
-        image: 'images/unitedbysound.webp',
-        link: 'https://github.com/sabrkei/united-by-sound',
-        liveUrl: 'https://www.figma.com/proto/vZKmLu3fBcpQJ06vfaQ8Lb/Festival-projekt?node-id=441-627&starting-point-node-id=441%3A627&t=yLvrFnAjrCLXzmut-1',
-        stack: [
-          { name: 'Figma', icon: `${DI}/figma/figma-original.svg` },
-        ],
-      },
-      {
-        title: 'Football Stats Hub',
-        description: 'Native JS API project comparing football teams.',
-        image: 'images/footballstatshublogo.webp',
-        link: 'https://github.com/sabrkei/football-stats-hub',
-        liveUrl: 'https://sabrkei.github.io/football-stats-hub',
-        stack: [
-          { name: 'JavaScript', icon: `${DI}/javascript/javascript-original.svg` },
-          { name: 'HTML5',      icon: `${DI}/html5/html5-original.svg` },
-          { name: 'CSS3',       icon: `${DI}/css3/css3-original.svg` },
-        ],
-      },
-      {
-        title: 'Historical Currency Exchange Rates',
-        description: 'Vue router project fetching historical exchange rates.',
-        image: 'images/currencyexchange.webp',
-        link: 'https://github.com/sabrkei/currencyexchange',
-        liveUrl: 'https://sabrkei.github.io/currencyexchange',
-        stack: [
-          { name: 'Vue.js',     icon: `${DI}/vuejs/vuejs-original.svg` },
-          { name: 'JavaScript', icon: `${DI}/javascript/javascript-original.svg` },
-        ],
-      },
-      {
-        title: 'TripLingo — Agil Group Project',
-        description: 'Group project: a language learning web app built with Vue 3 and Vite.',
-        image: 'https://raw.githubusercontent.com/mandys-k/Grupp5/main/public/triplingofavicon.png',
-        link: 'https://github.com/mandys-k/Grupp5',
-        liveUrl: 'https://mandys-k.github.io/Grupp5/#/',
-        stack: [
-          { name: 'Vue.js',     icon: `${DI}/vuejs/vuejs-original.svg` },
-          { name: 'Vite',       icon: `${DI}/vite/vite-original.svg` },
-          { name: 'Bootstrap',  icon: `${DI}/bootstrap/bootstrap-original.svg` },
-        ],
-      },
-    ]);
 
     const siteBuilds = ref([
       {
@@ -240,10 +203,15 @@ createApp({
     };
 
     return {
+      isDark,
+      toggleTheme,
+      prefersReducedMotion,
+      aboutVideo,
+      videoPaused,
+      toggleVideo,
       activeSection,
       openSection,
       goHome,
-      personalProjects,
       siteBuilds,
       npmBuilds,
       formData,
