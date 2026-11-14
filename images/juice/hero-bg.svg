@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 720" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="a" cx="78%" cy="45%" r="55%"><stop offset="0" stop-color="#c6f04a" stop-opacity=".22"/><stop offset="1" stop-color="#c6f04a" stop-opacity="0"/></radialGradient>
+    <radialGradient id="b" cx="12%" cy="90%" r="45%"><stop offset="0" stop-color="#4de0b0" stop-opacity=".14"/><stop offset="1" stop-color="#4de0b0" stop-opacity="0"/></radialGradient>
+    <linearGradient id="c" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0a0b"/><stop offset="1" stop-color="#111613"/></linearGradient>
+  </defs>
+  <rect width="1920" height="720" fill="url(#c)"/>
+  <rect width="1920" height="720" fill="url(#a)"/>
+  <rect width="1920" height="720" fill="url(#b)"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity=".05" stroke-width="28">
+    <circle cx="1500" cy="360" r="300"/><circle cx="1500" cy="360" r="460" stroke-opacity=".035"/><circle cx="1500" cy="360" r="620" stroke-opacity=".025"/>
+  </g>
+  <circle cx="1500" cy="360" r="300" fill="none" stroke="#c6f04a" stroke-opacity=".14" stroke-width="28" stroke-linecap="round" stroke-dasharray="1130 1885" transform="rotate(-90 1500 360)"/>
+</svg>

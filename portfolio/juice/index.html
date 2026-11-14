@@ -43,23 +43,38 @@
       font-family: 'Montserrat', system-ui, sans-serif;
       line-height: 1.65;
     }
-    main { max-width: 880px; margin: 0 auto; padding: 24px 16px 64px; }
+    main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
     a { color: var(--accent); }
     a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
     .btn { display: inline-block; background: var(--accent); color: var(--bg); font-weight: 700; text-decoration: none; padding: 10px 18px; border-radius: 8px; }
     .btn:hover { filter: brightness(1.1); }
-    .hero { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px; margin-bottom: 8px; }
-    .hero__icon { width: 64px; height: 64px; border-radius: 14px; margin-bottom: 16px; }
-    .hero .note { margin: 20px 0; }
-    .hero p:last-child { margin-bottom: 0; }
-    .hero__shot img { width: 260px; border-radius: 14px; border: 1px solid var(--line); }
-    @media (max-width: 680px) {
-      .hero { grid-template-columns: 1fr; padding: 20px; }
-      .hero__shot { order: 2; }
-      .hero__shot img { width: min(260px, 100%); }
-    }
-    .back { display: inline-block; margin-bottom: 24px; font-size: 0.85rem; font-weight: 700; text-decoration: none; }
+    .back { display: inline-block; margin-bottom: 24px; font-size: 0.85rem; font-weight: 700; text-decoration: none; color: #c6f04a; }
     .back:hover { text-decoration: underline; }
+    .hero { background: #0a0a0b url('../../images/juice/hero-bg.svg') center / cover no-repeat; color: #ececec; padding: 24px 16px 56px; }
+    .hero__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; }
+    .hero__icon { width: 64px; height: 64px; border-radius: 14px; margin-bottom: 16px; display: block; }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); }
+    .hero .lead { color: #c9ccd1; }
+    .hero__note { border-left: 4px solid #c6f04a; padding: 4px 0 4px 16px; margin: 24px 0; color: #ececec; }
+    .hero .btn { background: #c6f04a; color: #0a0a0b; }
+    .hero a:focus-visible { outline-color: #c6f04a; }
+    .hero figure { margin: 0; text-align: center; }
+    .hero figcaption { color: #c9ccd1; }
+    /* Samsung Galaxy S26-style phone: flat titanium frame, thin even bezels, centred punch-hole camera */
+    .phone { position: relative; width: 270px; padding: 7px; border-radius: 44px; margin: 0 auto;
+      background: linear-gradient(145deg, #5b5f66 0%, #2a2c30 30%, #1a1b1e 60%, #4a4d53 100%);
+      box-shadow: 0 0 0 1px #0a0a0b, inset 0 0 0 1px rgba(255,255,255,.25), 0 30px 60px rgba(0,0,0,.55), 0 0 90px rgba(198,240,74,.12); }
+    .phone__screen { position: relative; border-radius: 37px; overflow: hidden; background: #000; border: 3px solid #000; }
+    .phone__screen img { display: block; width: 100%; height: auto; border: 0; border-radius: 0; }
+    .phone__camera { position: absolute; top: 9px; left: 50%; width: 11px; height: 11px; margin-left: -5.5px; border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #2b3a55 0, #07090d 55%, #000 100%); box-shadow: 0 0 0 2px #000; }
+    .phone__btn { position: absolute; right: -3px; width: 3px; border-radius: 0 2px 2px 0; background: linear-gradient(90deg, #2a2c30, #5b5f66); }
+    .phone__btn--vol { top: 110px; height: 64px; }
+    .phone__btn--power { top: 200px; height: 40px; }
+    @media (max-width: 760px) {
+      .hero__inner { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+      .phone { width: min(270px, 80vw); }
+    }
     h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.2; margin: 0; }
     h2 { font-size: 1.3rem; margin: 2.5rem 0 0.75rem; }
     h3 { font-size: 1rem; margin: 0 0 0.25rem; }
@@ -81,23 +96,31 @@
   </style>
 </head>
 <body>
-<main>
-  <a class="back" href="../../#portfolio">&larr; Back to portfolio</a>
-
-  <header class="hero">
+<header class="hero">
+  <div class="hero__inner">
     <div class="hero__text">
+      <a class="back" href="../../#portfolio">&larr; Back to portfolio</a>
       <img class="hero__icon" src="../../images/juice/watch-app-icon.webp" alt="Juice watch app icon: green-tipped headphones above the word Juice" width="64" height="64">
       <h1>Juice: Garmin watch setup</h1>
       <p class="lead">Show your Garmin watch battery in Juice widgets on Android. It takes about five minutes.</p>
-      <p class="note">Garmin watch support is part of <strong>Juice Pro</strong>, a one-time purchase with no subscription. The Juice watch app itself is free.</p>
+      <p class="hero__note">Garmin watch support is part of <strong>Juice Pro</strong>, a one-time purchase with no subscription. The Juice watch app itself is free.</p>
       <p><a class="btn" href="https://apps.garmin.com/en-US/apps/bd27701b-5439-48e0-8b8d-7846f44ba7ab" target="_blank" rel="noopener noreferrer">Get the Juice watch app on Connect IQ</a></p>
     </div>
     <figure class="hero__shot">
-      <img src="../../images/juice/connectiq-listing.webp" alt="The Juice watch app listing in the Connect IQ Store, showing 'Your watch battery, on your phone', the watch screens at 8%, 20% and 50%, and a note that the Juice Android app (Pro version) is required" width="300" height="651">
+      <div class="phone" role="img" aria-label="Samsung Galaxy S26 showing the Juice watch app listing in the Connect IQ Store: 'Your watch battery, on your phone', the watch screens at 8%, 20% and 50%, and a note that the Juice Android app (Pro version) is required">
+        <span class="phone__btn phone__btn--power"></span>
+        <span class="phone__btn phone__btn--vol"></span>
+        <div class="phone__screen">
+          <img src="../../images/juice/connectiq-listing.webp" alt="" width="300" height="651">
+          <span class="phone__camera"></span>
+        </div>
+      </div>
       <figcaption>The Juice listing on the Connect IQ Store</figcaption>
     </figure>
-  </header>
+  </div>
+</header>
 
+<main>
   <h2>About Juice</h2>
   <p>Juice shows battery and connection health for your phone, Bluetooth devices and Garmin watch in one Android app, with resizable home-screen widgets. The Garmin support comes from a small companion app that runs on your watch.</p>
   <div class="shots shots--phone">
