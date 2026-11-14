@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sabrkei-v10';
+const CACHE_NAME = 'sabrkei-v11';
 
 // Derive base path from SW location so this works in any subfolder
 // e.g. /sabrkei.com/sw.js → BASE = '/sabrkei.com/'
@@ -75,18 +75,19 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // Static assets: cache-first, then network
+  // Static assets: stale-while-revalidate. Serve the cached copy instantly, but always
+  // refetch in the background (bypassing the HTTP cache) so the next load is up to date.
   event.respondWith(
-    caches.match(request).then(cached => {
-      if (cached) return cached;
-      return fetch(request).then(response => {
-        if (!response || response.status !== 200 || response.type !== 'basic') {
+    caches.open(CACHE_NAME).then(cache =>
+      cache.match(request).then(cached => {
+        const network = fetch(request, { cache: 'no-cache' }).then(response => {
+          if (response && response.status === 200 && response.type === 'basic') {
+            cache.put(request, response.clone());
+          }
           return response;
-        }
-        const clone = response.clone();
-        caches.open(CACHE_NAME).then(cache => cache.put(request, clone));
-        return response;
-      });
-    })
+        }).catch(() => cached);
+        return cached || network;
+      })
+    )
   );
 });
