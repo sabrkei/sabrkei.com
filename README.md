@@ -1,6 +1,6 @@
 # GBG-Web Portfolio
 
-A modern, responsive portfolio website for Scott, a front-end developer and designer based in Gothenburg, Sweden.
+A modern, responsive portfolio website for Scott, a fullstack product developer and designer based in Gothenburg, Sweden.
 
 ## Overview
 
