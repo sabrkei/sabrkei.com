@@ -43,20 +43,23 @@
       font-family: 'Montserrat', system-ui, sans-serif;
       line-height: 1.65;
     }
-    main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+    main { max-width: 880px; margin: 0 auto; padding: 24px 16px 64px; }
     a { color: var(--accent); }
     a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
     .btn { display: inline-block; background: var(--accent); color: var(--bg); font-weight: 700; text-decoration: none; padding: 10px 18px; border-radius: 8px; }
     .btn:hover { filter: brightness(1.1); }
-    .store { display: flex; align-items: center; gap: 16px; margin: 20px 0; }
-    .store img { width: 64px; height: 64px; border-radius: 14px; }
-    .store p { margin: 0 0 8px; font-size: 0.9rem; }
-    .listing { margin: 24px 0; }
-    .listing img { max-width: 300px; border-radius: 14px; border: 1px solid var(--line); }
+    .hero { display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px; margin-bottom: 8px; }
+    .hero__icon { width: 64px; height: 64px; border-radius: 14px; margin-bottom: 16px; }
+    .hero .note { margin: 20px 0; }
+    .hero p:last-child { margin-bottom: 0; }
+    .hero__shot img { width: 260px; border-radius: 14px; border: 1px solid var(--line); }
+    @media (max-width: 680px) {
+      .hero { grid-template-columns: 1fr; padding: 20px; }
+      .hero__shot { order: 2; }
+      .hero__shot img { width: min(260px, 100%); }
+    }
     .back { display: inline-block; margin-bottom: 24px; font-size: 0.85rem; font-weight: 700; text-decoration: none; }
     .back:hover { text-decoration: underline; }
-    header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
-    header img { width: 64px; height: 64px; border-radius: 16px; }
     h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.2; margin: 0; }
     h2 { font-size: 1.3rem; margin: 2.5rem 0 0.75rem; }
     h3 { font-size: 1rem; margin: 0 0 0.25rem; }
@@ -81,25 +84,19 @@
 <main>
   <a class="back" href="../../#portfolio">&larr; Back to portfolio</a>
 
-  <header>
-    <img src="../../images/juice-logo.png" alt="" width="64" height="64">
-    <h1>Juice: Garmin watch setup</h1>
-  </header>
-  <p class="lead">Show your Garmin watch battery in Juice widgets on Android. It takes about five minutes.</p>
-
-  <p class="note">Garmin watch support is part of <strong>Juice Pro</strong>, a one-time purchase with no subscription. The Juice watch app itself is free.</p>
-
-  <div class="store">
-    <img src="../../images/juice/watch-app-icon.webp" alt="Juice watch app icon: green-tipped headphones above the word Juice" width="64" height="64">
-    <div>
-      <p>Juice for Garmin, free on the Connect IQ Store</p>
+  <header class="hero">
+    <div class="hero__text">
+      <img class="hero__icon" src="../../images/juice/watch-app-icon.webp" alt="Juice watch app icon: green-tipped headphones above the word Juice" width="64" height="64">
+      <h1>Juice: Garmin watch setup</h1>
+      <p class="lead">Show your Garmin watch battery in Juice widgets on Android. It takes about five minutes.</p>
+      <p class="note">Garmin watch support is part of <strong>Juice Pro</strong>, a one-time purchase with no subscription. The Juice watch app itself is free.</p>
       <p><a class="btn" href="https://apps.garmin.com/en-US/apps/bd27701b-5439-48e0-8b8d-7846f44ba7ab" target="_blank" rel="noopener noreferrer">Get the Juice watch app on Connect IQ</a></p>
     </div>
-  </div>
-  <figure class="listing">
-    <img src="../../images/juice/connectiq-listing.webp" alt="The Juice watch app listing in the Connect IQ Store, showing 'Your watch battery, on your phone', the watch screens at 8%, 20% and 50%, and a note that the Juice Android app (Pro version) is required" width="300" height="651" loading="lazy">
-    <figcaption>The Juice watch app listing on the Connect IQ Store</figcaption>
-  </figure>
+    <figure class="hero__shot">
+      <img src="../../images/juice/connectiq-listing.webp" alt="The Juice watch app listing in the Connect IQ Store, showing 'Your watch battery, on your phone', the watch screens at 8%, 20% and 50%, and a note that the Juice Android app (Pro version) is required" width="300" height="651">
+      <figcaption>The Juice listing on the Connect IQ Store</figcaption>
+    </figure>
+  </header>
 
   <h2>About Juice</h2>
   <p>Juice shows battery and connection health for your phone, Bluetooth devices and Garmin watch in one Android app, with resizable home-screen widgets. The Garmin support comes from a small companion app that runs on your watch.</p>
