@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juice – Garmin watch setup | Scott Abraham Keinström</title>
+  <meta name="description" content="Step-by-step guide to installing the Juice watch app on your Garmin watch so its battery shows in Juice Pro widgets on Android.">
+  <link rel="canonical" href="https://sabrkei.com/portfolio/juice/">
+  <link rel="icon" type="image/png" href="../../images/sabrkei-favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (!t && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --accent: #3d6a9a;
+      --bg: #f8fbe3;
+      --text: #3e3e3e;
+      --surface: #ffffff;
+      --line: rgba(0, 0, 0, 0.12);
+      --note-bg: #e8ebcc;
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --accent: #8ab4f8;
+      --bg: #121417;
+      --text: #ececec;
+      --surface: #1c1f24;
+      --line: rgba(255, 255, 255, 0.16);
+      --note-bg: #262a31;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Montserrat', system-ui, sans-serif;
+      line-height: 1.65;
+    }
+    main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+    a { color: var(--accent); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .back { display: inline-block; margin-bottom: 24px; font-size: 0.85rem; font-weight: 700; text-decoration: none; }
+    .back:hover { text-decoration: underline; }
+    header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+    header img { width: 64px; height: 64px; border-radius: 16px; }
+    h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.2; margin: 0; }
+    h2 { font-size: 1.3rem; margin: 2.5rem 0 0.75rem; }
+    h3 { font-size: 1rem; margin: 0 0 0.25rem; }
+    .lead { font-size: 1.05rem; margin: 8px 0 0; }
+    .note { background: var(--note-bg); border-left: 4px solid var(--accent); padding: 12px 16px; border-radius: 6px; margin: 20px 0; }
+    ol, ul { padding-left: 1.4rem; }
+    li { margin-bottom: 0.6rem; }
+    figure { margin: 0; text-align: center; }
+    figcaption { font-size: 0.8rem; margin-top: 8px; opacity: 0.85; }
+    img { max-width: 100%; height: auto; }
+    .shots { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 24px 0; align-items: flex-start; }
+    .shots figure { flex: 0 1 220px; }
+    .shots--phone figure { flex-basis: 260px; }
+    .shots img { border-radius: 14px; border: 1px solid var(--line); background: #000; }
+    .shots--watch img { border-radius: 50%; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin-bottom: 12px; }
+    .card p { margin: 0; }
+    footer { margin-top: 3rem; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.8rem; }
+  </style>
+</head>
+<body>
+<main>
+  <a class="back" href="../../#portfolio">&larr; Back to portfolio</a>
+
+  <header>
+    <img src="../../images/juice-logo.png" alt="" width="64" height="64">
+    <h1>Juice: Garmin watch setup</h1>
+  </header>
+  <p class="lead">Show your Garmin watch battery in Juice widgets on Android. It takes about five minutes.</p>
+
+  <p class="note">Garmin watch support is part of <strong>Juice Pro</strong>, a one-time purchase with no subscription. The Juice watch app itself is free.</p>
+
+  <h2>About Juice</h2>
+  <p>Juice shows battery and connection health for your phone, Bluetooth devices and Garmin watch in one Android app, with resizable home-screen widgets. The Garmin support comes from a small companion app that runs on your watch.</p>
+  <div class="shots shots--phone">
+    <figure><img src="../../images/juice/devices.webp" alt="Juice 'My devices' screen showing the phone at 82% and a Garmin 255 Music watch at 47%" width="260" height="462" loading="lazy"><figcaption>My devices: phone and watch together</figcaption></figure>
+    <figure><img src="../../images/juice/widgets.webp" alt="Juice home-screen widgets showing phone and Garmin watch battery levels in several styles" width="260" height="462" loading="lazy"><figcaption>Widgets with your watch battery</figcaption></figure>
+  </div>
+
+  <h2>How it works</h2>
+  <p>Garmin watches don't share their battery over normal Bluetooth. Instead, the Juice app on your watch reads its battery and sends it to your phone through the Garmin Connect app, straight away when opened and then every 5 minutes. Juice on your phone shows it in your widgets. Nothing is sent anywhere else.</p>
+
+  <h2>What you need</h2>
+  <ul>
+    <li><strong>Juice Pro</strong> installed on your Android phone (Android 12 or newer).</li>
+    <li>The <strong>Garmin Connect</strong> app on your phone, with your watch already paired.</li>
+    <li>The <strong>Juice</strong> watch app from the Connect IQ Store. It's built for every Garmin watch that can run watch apps, including Forerunner 255/265/955 and Fenix 7/8.</li>
+  </ul>
+
+  <h2>Setup steps</h2>
+  <ol>
+    <li><strong>Check your watch is connected.</strong> Open Garmin Connect on your phone and make sure your watch shows as connected.</li>
+    <li><strong>Install the watch app.</strong> In Garmin Connect, open the Connect IQ Store, search for <strong>Juice</strong> (developer <strong>sabrkei</strong>) and install it on your watch.</li>
+    <li><strong>Sync.</strong> Let Garmin Connect sync so the app lands on your watch.</li>
+    <li><strong>Open Juice on the watch once.</strong> It sends its battery to your phone straight away, then every 5 minutes.</li>
+    <li><strong>Add a widget.</strong> In Juice on your phone, add a widget (or edit one) and choose your Garmin watch from the device list.</li>
+    <li><strong>Check it's working.</strong> Open Juice's <em>Settings &rarr; Garmin watches</em>. It should say your watch is sending its battery.</li>
+  </ol>
+
+  <div class="shots shots--watch">
+    <figure><img src="../../images/juice/watch-80.webp" alt="Juice watch app showing 80% and 'sent to phone'" width="220" height="220" loading="lazy"><figcaption>The watch app at 80%</figcaption></figure>
+    <figure><img src="../../images/juice/watch-20.webp" alt="Juice watch app showing 20% and 'sent to phone'" width="220" height="220" loading="lazy"><figcaption>The watch app at 20%</figcaption></figure>
+  </div>
+
+  <h2>Check your settings</h2>
+  <p>For reliable updates, the Settings screen in Juice should show Bluetooth access granted, background updates set to <em>Unrestricted</em>, and live updates on. Juice Pro shows as unlocked once purchased.</p>
+  <div class="shots shots--phone">
+    <figure><img src="../../images/juice/settings.webp" alt="Juice Settings screen with Bluetooth access, background updates and live updates enabled, and 'You have Juice Pro'" width="260" height="462" loading="lazy"><figcaption>Settings: everything enabled, Juice Pro active</figcaption></figure>
+  </div>
+
+  <h2>Troubleshooting</h2>
+  <div class="card"><h3>"No watch has reported yet"</h3><p>Open the Juice app on the watch once, make sure Garmin Connect shows the watch connected, then tap a Juice widget on your phone to ask for a fresh reading.</p></div>
+  <div class="card"><h3>Watch missing from the device list</h3><p>Open Garmin Connect, wait for it to sync, then reopen Juice. Juice only sees watches Garmin Connect knows about.</p></div>
+  <div class="card"><h3>Battery looks stale</h3><p>Android may be stopping Juice in the background. In Android settings set Juice's battery usage to <em>Unrestricted</em>, and keep Garmin Connect allowed to run in the background too.</p></div>
+  <div class="card"><h3>Still stuck?</h3><p>Reinstall the Juice watch app from the Connect IQ Store, force-stop Garmin Connect and open it again, then repeat steps 4&ndash;6.</p></div>
+
+  <footer>
+    <a href="../../#portfolio">Portfolio</a> &middot; &copy; Scott Abraham Keinström
+  </footer>
+</main>
+</body>
+</html>
