@@ -50,8 +50,10 @@
     .btn:hover { filter: brightness(1.1); }
     .back { display: inline-block; margin-bottom: 24px; font-size: 0.85rem; font-weight: 700; text-decoration: none; color: #c6f04a; }
     .back:hover { text-decoration: underline; }
-    .hero { background: #0a0a0b url('../../images/juice/hero-bg.svg') center / cover no-repeat; color: #ececec; padding: 24px 16px 56px; }
+    .hero { background: #0a0a0b url('../../images/juice/hero-bg.svg') center / cover no-repeat; color: #ececec; padding: 24px 16px 0; overflow: hidden; }
     .hero__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; }
+    .hero__text { padding-bottom: 56px; }
+    .hero__shot { align-self: end; }
     .hero__icon { width: 64px; height: 64px; border-radius: 14px; margin-bottom: 16px; display: block; }
     .hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); }
     .hero .lead { color: #c9ccd1; }
@@ -61,7 +63,7 @@
     .hero figure { margin: 0; text-align: center; }
     .hero figcaption { color: #c9ccd1; }
     /* Samsung Galaxy S26-style phone: flat titanium frame, thin even bezels, centred punch-hole camera */
-    .phone { position: relative; width: 270px; padding: 7px; border-radius: 44px; margin: 0 auto;
+    .phone { position: relative; width: 300px; padding: 7px; border-radius: 44px; margin: 0 auto -150px;
       background: linear-gradient(145deg, #5b5f66 0%, #2a2c30 30%, #1a1b1e 60%, #4a4d53 100%);
       box-shadow: 0 0 0 1px #0a0a0b, inset 0 0 0 1px rgba(255,255,255,.25), 0 30px 60px rgba(0,0,0,.55), 0 0 90px rgba(198,240,74,.12); }
     .phone__screen { position: relative; border-radius: 37px; overflow: hidden; background: #000; border: 3px solid #000; }
@@ -73,7 +75,8 @@
     .phone__btn--power { top: 200px; height: 40px; }
     @media (max-width: 760px) {
       .hero__inner { grid-template-columns: minmax(0, 1fr); gap: 32px; }
-      .phone { width: min(270px, 80vw); }
+      .phone { width: min(300px, 80vw); margin-bottom: -120px; }
+      .hero__text { padding-bottom: 0; }
     }
     h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.2; margin: 0; }
     h2 { font-size: 1.3rem; margin: 2.5rem 0 0.75rem; }
@@ -115,7 +118,6 @@
           <span class="phone__camera"></span>
         </div>
       </div>
-      <figcaption>The Juice listing on the Connect IQ Store</figcaption>
     </figure>
   </div>
 </header>
