@@ -12,7 +12,7 @@ This is a single-page portfolio application built with Vue 3, featuring an app-l
 - **Formspree** - Contact form handling
 - **CSS3** - Custom styling with CSS variables for theming
 - **Font Awesome 6** - Icon library
-- **Google Fonts** - Geist typeface
+- **Google Fonts** - Sora typeface
 
 ## Features
 
