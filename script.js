@@ -13,7 +13,11 @@ createApp({
     const toggleTheme = () => {
       isDark.value = !isDark.value;
       const theme = isDark.value ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', theme);
+      const root = document.documentElement;
+      // Suspend colour transitions so every element switches at once (no grey/blue fade)
+      root.classList.add('theme-switching');
+      root.setAttribute('data-theme', theme);
+      requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove('theme-switching')));
       try { localStorage.setItem('theme', theme); } catch {}
     };
 
