@@ -46,6 +46,8 @@
     main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
     a { color: var(--accent); }
     a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .btn { display: inline-block; background: var(--accent); color: var(--bg); font-weight: 700; text-decoration: none; padding: 10px 18px; border-radius: 8px; }
+    .btn:hover { filter: brightness(1.1); }
     .back { display: inline-block; margin-bottom: 24px; font-size: 0.85rem; font-weight: 700; text-decoration: none; }
     .back:hover { text-decoration: underline; }
     header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
@@ -82,6 +84,8 @@
 
   <p class="note">Garmin watch support is part of <strong>Juice Pro</strong>, a one-time purchase with no subscription. The Juice watch app itself is free.</p>
 
+  <p><a class="btn" href="https://apps.garmin.com/en-US/apps/bd27701b-5439-48e0-8b8d-7846f44ba7ab" target="_blank" rel="noopener noreferrer">Get the Juice watch app on Connect IQ</a></p>
+
   <h2>About Juice</h2>
   <p>Juice shows battery and connection health for your phone, Bluetooth devices and Garmin watch in one Android app, with resizable home-screen widgets. The Garmin support comes from a small companion app that runs on your watch.</p>
   <div class="shots shots--phone">
@@ -96,13 +100,13 @@
   <ul>
     <li><strong>Juice Pro</strong> installed on your Android phone (Android 12 or newer).</li>
     <li>The <strong>Garmin Connect</strong> app on your phone, with your watch already paired.</li>
-    <li>The <strong>Juice</strong> watch app from the Connect IQ Store. It's built for every Garmin watch that can run watch apps, including Forerunner 255/265/955 and Fenix 7/8.</li>
+    <li>The <strong>Juice</strong> watch app from the <a href="https://apps.garmin.com/en-US/apps/bd27701b-5439-48e0-8b8d-7846f44ba7ab" target="_blank" rel="noopener noreferrer">Connect IQ Store</a>. It's built for every Garmin watch that can run watch apps, including Forerunner 255/265/955 and Fenix 7/8.</li>
   </ul>
 
   <h2>Setup steps</h2>
   <ol>
     <li><strong>Check your watch is connected.</strong> Open Garmin Connect on your phone and make sure your watch shows as connected.</li>
-    <li><strong>Install the watch app.</strong> In Garmin Connect, open the Connect IQ Store, search for <strong>Juice</strong> (developer <strong>sabrkei</strong>) and install it on your watch.</li>
+    <li><strong>Install the watch app.</strong> Open the <a href="https://apps.garmin.com/en-US/apps/bd27701b-5439-48e0-8b8d-7846f44ba7ab" target="_blank" rel="noopener noreferrer">Juice page in the Connect IQ Store</a>, or search for <strong>Juice</strong> (developer <strong>sabrkei</strong>) in the Connect IQ Store inside Garmin Connect, and install it on your watch.</li>
     <li><strong>Sync.</strong> Let Garmin Connect sync so the app lands on your watch.</li>
     <li><strong>Open Juice on the watch once.</strong> It sends its battery to your phone straight away, then every 5 minutes.</li>
     <li><strong>Add a widget.</strong> In Juice on your phone, add a widget (or edit one) and choose your Garmin watch from the device list.</li>
