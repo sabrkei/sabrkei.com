@@ -1,4 +1,4 @@
-const CACHE_NAME = 'sabrkei-v11';
+const CACHE_NAME = 'sabrkei-v12';
 
 // Derive base path from SW location so this works in any subfolder
 // e.g. /sabrkei.com/sw.js → BASE = '/sabrkei.com/'
@@ -37,7 +37,7 @@ const PRECACHE_ASSETS = [
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(PRECACHE_ASSETS))
+      .then(cache => cache.addAll(PRECACHE_ASSETS.map(url => new Request(url, { cache: 'reload' }))))
       .then(() => self.skipWaiting())
   );
 });
