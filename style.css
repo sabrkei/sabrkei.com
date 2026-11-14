@@ -9,10 +9,10 @@
    including text over the project-row thumbnails (checked against a black image). */
 :root {
   color-scheme: light;
-  --color-accent: #3d6a9a;
-  --color-accent-hover: #2a5280;
-  --bg-current: #f8fbe3;
-  --card-bg: #f8fbe3;
+  --color-accent: #2a5381;
+  --color-accent-hover: #1c3f66;
+  --bg-current: #d6ddc2;
+  --card-bg: #e4e9d3;
   --text-main: #3e3e3e;
   --text-dim: #3e3e3e;
   --border-color: #64748b;
@@ -20,25 +20,25 @@
   --focus-ring: 3px solid var(--color-accent);
   --focus-offset: 2px;
 
-  --surface: #ffffff;
-  --surface-alt: #e8ebcc;
+  --surface: #eaeedd;
+  --surface-alt: #c8d1b0;
   --line: rgba(0, 0, 0, 0.1);
   --line-soft: rgba(0, 0, 0, 0.08);
   --line-strong: rgba(0, 0, 0, 0.45);
   --line-hover: rgba(0, 0, 0, 0.6);
   --tint: rgba(0, 0, 0, 0.03);
   --tint-strong: rgba(0, 0, 0, 0.06);
-  --row-overlay: rgba(248, 251, 227, 0.88);
-  --cv-control-bg: rgba(248, 251, 227, 0.9);
+  --row-overlay: rgba(214, 221, 194, 0.88);
+  --cv-control-bg: rgba(214, 221, 194, 0.9);
   --social-muted: rgba(62, 62, 62, 0.7);
-  --placeholder: #6b6b6b;
+  --placeholder: #55584c;
   --app-icon-fg: #ffffff;
-  --live-link: #2d6a3e;
-  --success: #2d6a3e;
-  --success-bg: #e3efd6;
-  --success-border: #2d6a3e;
+  --live-link: #1f5a30;
+  --success: #1f5a30;
+  --success-bg: #dbe8cb;
+  --success-border: #1f5a30;
   --error: #b3261e;
-  --error-bg: #f6e1d6;
+  --error-bg: #f1ddd0;
   --error-border: #b3261e;
 }
 
