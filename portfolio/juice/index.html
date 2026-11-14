@@ -84,6 +84,12 @@
     .shots--watch img { border-radius: 50%; }
     .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin-bottom: 12px; }
     .card p { margin: 0; }
+    .card summary { font-weight: 700; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .card summary::-webkit-details-marker { display: none; }
+    .card summary::after { content: "+"; font-size: 1.3rem; line-height: 1; color: var(--accent); flex: none; }
+    .card[open] summary::after { content: "\2212"; }
+    .card summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+    .card[open] p { margin-top: 10px; }
     footer { margin-top: 3rem; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.8rem; }
   </style>
 </head>
@@ -144,10 +150,10 @@
   </div>
 
   <h2>Troubleshooting</h2>
-  <div class="card"><h3>"No watch has reported yet"</h3><p>Open the Juice app on the watch once, make sure Garmin Connect shows the watch connected, then tap a Juice widget on your phone to ask for a fresh reading.</p></div>
-  <div class="card"><h3>Watch missing from the device list</h3><p>Open Garmin Connect, wait for it to sync, then reopen Juice. Juice only sees watches Garmin Connect knows about.</p></div>
-  <div class="card"><h3>Battery looks stale</h3><p>Android may be stopping Juice in the background. In Android settings set Juice's battery usage to <em>Unrestricted</em>, and keep Garmin Connect allowed to run in the background too.</p></div>
-  <div class="card"><h3>Still stuck?</h3><p>Reinstall the Juice watch app from the Connect IQ Store, force-stop Garmin Connect and open it again, then repeat steps 4&ndash;6.</p></div>
+  <details class="card"><summary>"No watch has reported yet"</summary><p>Open the Juice app on the watch once, make sure Garmin Connect shows the watch connected, then tap a Juice widget on your phone to ask for a fresh reading.</p></details>
+  <details class="card"><summary>Watch missing from the device list</summary><p>Open Garmin Connect, wait for it to sync, then reopen Juice. Juice only sees watches Garmin Connect knows about.</p></details>
+  <details class="card"><summary>Battery looks stale</summary><p>Android may be stopping Juice in the background. In Android settings set Juice's battery usage to <em>Unrestricted</em>, and keep Garmin Connect allowed to run in the background too.</p></details>
+  <details class="card"><summary>Still stuck?</summary><p>Reinstall the Juice watch app from the Connect IQ Store, force-stop Garmin Connect and open it again, then repeat steps 4&ndash;6.</p></details>
 
   <footer>
     <a href="../../#portfolio">Portfolio</a> &middot; &copy; Scott Abraham Keinström
