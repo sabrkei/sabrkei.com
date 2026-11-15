@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juice – Garmin watch setup | Scott Abraham Keinström</title>
-  <meta name="description" content="Step-by-step guide to installing the Juice watch app on your Garmin watch so its battery shows in Juice Pro widgets on Android.">
+  <title>Juice – Garmin watch, heart rate and widgets guide | Scott Abraham Keinström</title>
+  <meta name="description" content="Set up the Juice watch app on your Garmin watch, turn on heart rate, and add and customise the battery and heart rate widgets in Juice for Android.">
   <link rel="canonical" href="https://sabrkei.com/portfolio/juice/">
   <link rel="icon" type="image/png" href="../../images/sabrkei-favicon.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
@@ -99,8 +99,8 @@
     <div class="hero__text">
       <a class="back" href="../../#portfolio">&larr; Back to portfolio</a>
       <img class="hero__icon" src="../../images/juice/watch-app-icon.webp" alt="Juice watch app icon: green-tipped headphones above the word Juice" width="64" height="64">
-      <h1>Juice: Garmin watch setup</h1>
-      <p class="lead">Show your Garmin watch battery in Juice widgets on Android. It takes about five minutes.</p>
+      <h1>Juice: Garmin watch, heart rate and widgets</h1>
+      <p class="lead">Show your Garmin watch battery and heart rate in Juice on Android, and put both on your home screen. It takes about five minutes.</p>
       <p class="hero__note">Garmin watch support is part of <strong>Juice Pro</strong>, a one-time purchase with no subscription. The Juice watch app itself is free.</p>
       <p><a class="btn" href="https://apps.garmin.com/apps/bd27701b-5439-48e0-8b8d-7846f44ba7ab" target="_blank" rel="noopener noreferrer">Get the Juice watch app on Connect IQ</a></p>
     </div>
@@ -111,6 +111,11 @@
 </header>
 
 <main>
+  <div class="card" style="margin-top:0">
+    <p><strong>New in Juice 3.4.1.</strong> Customise the heart rate widget (accent colour, light or dark, opacity) and tap it to jump straight to your heart rate. A refresh button and full-width card on My devices, a redesigned heart rate section, and fixes to the icon picker and widget picker. <a href="release-notes/">See the full release notes</a>.</p>
+  </div>
+  <p><strong>On this page:</strong> <a href="#setup">Watch setup</a> &middot; <a href="#heart-rate">Heart rate</a> &middot; <a href="#widgets">Widgets: add, set up and change</a> &middot; <a href="#heart-widget">Heart rate widget</a> &middot; <a href="#troubleshooting">Troubleshooting</a> &middot; <a href="release-notes/">Release notes</a></p>
+
   <h2>About Juice</h2>
   <p>Juice shows battery and connection health for your phone, Bluetooth devices and Garmin watch in one Android app, with resizable home-screen widgets. The Garmin support comes from a small companion app that runs on your watch.</p>
   <div class="shots shots--phone">
@@ -128,7 +133,7 @@
     <li>The <strong>Juice</strong> watch app from the <a href="https://apps.garmin.com/apps/bd27701b-5439-48e0-8b8d-7846f44ba7ab" target="_blank" rel="noopener noreferrer">Connect IQ Store</a>. It's built for every Garmin watch that can run watch apps, including Forerunner 255/265/955 and Fenix 7/8.</li>
   </ul>
 
-  <h2>Setup steps</h2>
+  <h2 id="setup">Watch setup steps</h2>
   <ol>
     <li><strong>Check your watch is connected.</strong> Open Garmin Connect on your phone and make sure your watch shows as connected.</li>
     <li><strong>Install the watch app.</strong> Open the <a href="https://apps.garmin.com/apps/bd27701b-5439-48e0-8b8d-7846f44ba7ab" target="_blank" rel="noopener noreferrer">Juice page in the Connect IQ Store</a>, or search for <strong>Juice</strong> (developer <strong>sabrkei</strong>) in the Connect IQ Store inside Garmin Connect, and install it on your watch.</li>
@@ -149,14 +154,65 @@
     <figure><img src="../../images/juice/settings.webp" alt="Juice Settings screen with Bluetooth access, background updates and live updates enabled, and 'You have Juice Pro'" width="260" height="462" loading="lazy"><figcaption>Settings: everything enabled, Juice Pro active</figcaption></figure>
   </div>
 
-  <h2>Troubleshooting</h2>
+  <h2 id="heart-rate">Heart rate from your Garmin watch</h2>
+  <p>With <strong>Juice Pro</strong>, Juice also shows your watch's heart rate: the latest reading, 5-minute and hourly averages, today's lowest, highest and average, and your resting heart rate. It uses the same Juice watch app, so there is nothing extra to install, but the watch app needs to be up to date.</p>
+  <div class="note"><strong>Good to know.</strong> Heart rate updates about every 5 minutes, it isn't live. It only appears when your watch reports it (a watch without a heart rate sensor sends none), and it stays on your phone: it is never uploaded.</div>
+
+  <h3>Turn it on</h3>
+  <ol>
+    <li><strong>Update the watch app.</strong> Open the Juice page in the Connect IQ Store (link above) and update Juice on your watch, then let Garmin Connect sync.</li>
+    <li><strong>Open Juice on the watch once.</strong> It sends its battery and heart rate to your phone, then every 5 minutes.</li>
+    <li><strong>Open your watch in Juice.</strong> On the <em>My devices</em> screen, tap your Garmin watch. Scroll down to the <strong>Heart rate</strong> card.</li>
+    <li><strong>Switch on &ldquo;Show heart rate from my watch&rdquo;.</strong> If it says it is waiting, give it up to five minutes and open Juice on the watch again.</li>
+  </ol>
+  <div class="shots shots--phone">
+    <figure><img src="../../images/juice/guide-heart-enable.gif" alt="Animation: tap the Garmin watch on My devices, scroll to the Heart rate card and switch on Show heart rate from my watch; the current bpm, averages and resting heart rate appear" width="260" height="520" loading="lazy"><figcaption>Turning on heart rate (illustration of the steps)</figcaption></figure>
+  </div>
+
+  <h2 id="widgets">Widgets: add, set up and change</h2>
+  <p>Juice has two home-screen widgets: the <strong>battery widget</strong> for your phone, Bluetooth devices and watch, and (Juice Pro) the <strong>heart rate widget</strong>. Both resize on the home screen, and both open Juice when you tap them.</p>
+
+  <h3>Battery widget</h3>
+  <ol>
+    <li><strong>Add it.</strong> In Juice open the <em>Widgets</em> tab, choose a style and tap <em>Add to home screen</em>. Or long-press your home screen, choose <em>Widgets</em>, find <strong>Juice batteries</strong> and drag it out.</li>
+    <li><strong>Pick its devices.</strong> The settings screen opens when you place it. Tick the devices to show (up to 8: your phone, Bluetooth devices and Garmin watches).</li>
+    <li><strong>Make it fit.</strong> Stretch or shrink it on the home screen, from 1&times;1 up to 4&times;4. One widget does every shape: a row, a column or a grid.</li>
+    <li><strong>Change it any time.</strong> In Juice, <em>Widgets</em> tab &rarr; <em>Edit widget</em> (or long-press the widget on your home screen and choose its settings, if your launcher offers that).</li>
+  </ol>
+  <p>In the widget settings you can change the style (ring, capsule, battery, blocks, line, icon or cards), light, dark or follow-the-phone appearance, the accent, low-battery and charging colours, the background colour and opacity, whether device names show, and, with Juice Pro, 3D icons in their own colours and a small heart rate line under your watch's battery.</p>
+
+  <h2 id="heart-widget">Heart rate widget (Juice Pro)</h2>
+  <p>A separate widget for your watch's heart rate. Stretch it from 1&times;1 to 4&times;4 and it shows more as it grows:</p>
+  <ul>
+    <li><strong>Small (1&times;1, 2&times;1):</strong> a heart and the latest bpm.</li>
+    <li><strong>Wide (3&times;1, 4&times;1):</strong> bpm plus up to three of today's figures.</li>
+    <li><strong>Square (2&times;2, 3&times;2):</strong> bpm, resting and average, and today's low-to-high range bar.</li>
+    <li><strong>Large (4&times;2 and up):</strong> everything the watch sends, a trend line and the range bar.</li>
+  </ul>
+  <h3>Add and set it up</h3>
+  <ol>
+    <li><strong>Add it.</strong> In Juice open <em>Widgets</em> and tap <em>Add heart rate widget</em> (below the battery widget), or find <strong>Juice heart rate</strong> in your home screen's widget list. It only appears once Juice Pro is unlocked.</li>
+    <li><strong>Choose how it looks.</strong> The settings screen opens when you place it: pick an accent colour (or any custom colour), <em>Auto</em>, <em>Light</em> or <em>Dark</em>, and the background opacity. Turn on a custom background colour if you want one.</li>
+    <li><strong>Change it later.</strong> Long-press the widget and choose its settings, or remove it and add it again. Settings are kept per widget, so each can look different.</li>
+    <li><strong>Tap it.</strong> Tapping the widget opens Juice on your watch page, already scrolled to the heart rate section.</li>
+  </ol>
+  <p>An older reading stays on the widget but greyed, so it never passes for a live number. Until your watch has sent a reading, the widget shows sample numbers in the Widgets tab and a prompt to open Juice on the watch.</p>
+  <div class="shots shots--phone">
+    <figure><img src="../../images/juice/guide-heart-widget.gif" alt="Animation: tap Add heart rate widget, the widget lands on the home screen, then change its accent colour, light or dark look and opacity in its settings" width="260" height="520" loading="lazy"><figcaption>Adding and customising the heart rate widget (illustration of the steps)</figcaption></figure>
+  </div>
+
+  <h2 id="troubleshooting">Troubleshooting</h2>
   <details class="card"><summary>"No watch has reported yet"</summary><p>Open the Juice app on the watch once, make sure Garmin Connect shows the watch connected, then tap a Juice widget on your phone to ask for a fresh reading.</p></details>
   <details class="card"><summary>Watch missing from the device list</summary><p>Open Garmin Connect, wait for it to sync, then reopen Juice. Juice only sees watches Garmin Connect knows about.</p></details>
   <details class="card"><summary>Battery looks stale</summary><p>Android may be stopping Juice in the background. In Android settings set Juice's battery usage to <em>Unrestricted</em>, and keep Garmin Connect allowed to run in the background too.</p></details>
+  <details class="card"><summary>No heart rate showing</summary><p>Update the Juice watch app from the Connect IQ Store, open it on the watch once, and switch on <em>Show heart rate from my watch</em> in the Heart rate card on your watch's page. It can take up to five minutes. A watch without a heart rate sensor, or one that hasn't recorded a recent reading, sends none.</p></details>
+  <details class="card"><summary>The heart rate widget isn't in my widget list</summary><p>It is part of Juice Pro. Once Pro is unlocked, open Juice once and it appears in the widget list. Restart your launcher if it still isn't there.</p></details>
+  <details class="card"><summary>The heart rate number is greyed out</summary><p>That reading is older than about half an hour. Open Juice on the watch, check Garmin Connect shows the watch connected, and wait a few minutes.</p></details>
+  <details class="card"><summary>My widget changes didn't show</summary><p>Open Juice once so the widget refreshes. For the battery widget use <em>Widgets &rarr; Edit widget</em>; the heart rate widget's settings open from the widget itself.</p></details>
   <details class="card"><summary>Still stuck?</summary><p>Reinstall the Juice watch app from the Connect IQ Store, force-stop Garmin Connect and open it again, then repeat steps 4&ndash;6.</p></details>
 
   <footer>
-    <a href="../../#portfolio">Portfolio</a> &middot; &copy; Scott Abraham Keinström
+    <a href="release-notes/">Release notes</a> &middot; <a href="../../#portfolio">Portfolio</a> &middot; &copy; Scott Abraham Keinström
   </footer>
 </main>
 </body>

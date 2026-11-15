@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juice – Release notes | Scott Abraham Keinström</title>
+  <meta name="description" content="What changed in every version of Juice: the Android app and its Garmin watch support.">
+  <link rel="canonical" href="https://sabrkei.com/portfolio/juice/release-notes/">
+  <link rel="icon" type="image/png" href="../../../images/sabrkei-favicon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (!t && window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --accent: #264b75;
+      --bg: #d6ddc2;
+      --text: #3e3e3e;
+      --surface: #eaeedd;
+      --line: rgba(0, 0, 0, 0.12);
+      --note-bg: #c8d1b0;
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --accent: #8ab4f8;
+      --bg: #121417;
+      --text: #ececec;
+      --surface: #1c1f24;
+      --line: rgba(255, 255, 255, 0.16);
+      --note-bg: #262a31;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Montserrat', system-ui, sans-serif;
+      line-height: 1.65;
+    }
+    main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+    a { color: var(--accent); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+    .btn { display: inline-block; background: var(--accent); color: var(--bg); font-weight: 700; text-decoration: none; padding: 10px 18px; border-radius: 8px; }
+    .btn:hover { filter: brightness(1.1); }
+    .back { display: inline-block; margin-bottom: 24px; font-size: 0.85rem; font-weight: 700; text-decoration: none; color: #c6f04a; }
+    .back:hover { text-decoration: underline; }
+    .hero { background: #0a0a0b url('../../../images/juice/hero-bg.svg') center / cover no-repeat; color: #ececec; padding: 24px 16px 0; overflow: hidden; }
+    .hero__inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 48px; align-items: center; }
+    .hero__text { padding-bottom: 56px; }
+    .hero__shot { align-self: end; }
+    .hero__icon { width: 64px; height: 64px; border-radius: 14px; margin-bottom: 16px; display: block; }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); }
+    .hero .lead { color: #c9ccd1; }
+    .hero__note { border-left: 4px solid #c6f04a; padding: 4px 0 4px 16px; margin: 24px 0; color: #ececec; }
+    .hero .btn { background: #c6f04a; color: #0a0a0b; }
+    .hero a:focus-visible { outline-color: #c6f04a; }
+    .hero figure { margin: 0; text-align: center; }
+    .hero figcaption { color: #c9ccd1; }
+    .phone { display: block; width: 300px; max-width: 80vw; height: auto; margin: 0 auto -150px; filter: drop-shadow(0 30px 40px rgba(0,0,0,.55)); }
+    @media (max-width: 760px) {
+      .hero__inner { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+      .hero__text { padding-bottom: 0; }
+    }
+    h1 { font-size: clamp(1.6rem, 5vw, 2.2rem); line-height: 1.2; margin: 0; }
+    h2 { font-size: 1.3rem; margin: 2.5rem 0 0.75rem; }
+    h3 { font-size: 1rem; margin: 0 0 0.25rem; }
+    .lead { font-size: 1.05rem; margin: 8px 0 0; }
+    .note { background: var(--note-bg); border-left: 4px solid var(--accent); padding: 12px 16px; border-radius: 6px; margin: 20px 0; }
+    ol, ul { padding-left: 1.4rem; }
+    li { margin-bottom: 0.6rem; }
+    figure { margin: 0; text-align: center; }
+    figcaption { font-size: 0.8rem; margin-top: 8px; opacity: 0.85; }
+    img { max-width: 100%; height: auto; }
+    .shots { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 24px 0; align-items: flex-start; }
+    .shots figure { flex: 0 1 220px; }
+    .shots--phone figure { flex-basis: 260px; }
+    .shots img { border-radius: 14px; border: 1px solid var(--line); background: #000; }
+    .shots--watch img { border-radius: 50%; }
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 18px; margin-bottom: 12px; }
+    .card p { margin: 0; }
+    .card summary { font-weight: 700; cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .card summary::-webkit-details-marker { display: none; }
+    .card summary::after { content: "+"; font-size: 1.3rem; line-height: 1; color: var(--accent); flex: none; }
+    .card[open] summary::after { content: "\2212"; }
+    .card summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+    .card[open] p { margin-top: 10px; }
+    footer { margin-top: 3rem; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.8rem; }
+      .release-date { font-weight: 400; font-size: 0.85rem; opacity: 0.8; margin-left: 8px; }
+    .card ul { margin: 10px 0 0; padding-left: 1.2rem; }
+    .card li { margin-bottom: 0.4rem; }
+    .tag { display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 1px 8px; border-radius: 999px; background: var(--accent); color: var(--bg); margin-left: 8px; vertical-align: middle; }
+  </style>
+</head>
+<body>
+<main>
+  <a class="back" style="color: var(--accent)" href="../">&larr; Juice: Garmin watch setup</a>
+  <h1>Juice release notes</h1>
+  <p class="lead">What changed in each version of Juice. Tap a version to open it. The app shows the latest three; everything earlier is here.</p>
+
+  <h2>Latest versions</h2>
+  <details class="card" id="v3-4-1" open>
+    <summary><span>Version 3.4.1<span class="release-date">15 Nov 2026</span><span class="tag">Latest</span></span></summary>
+    <ul>
+        <li>Heart rate widget: choose accent colour, light or dark, and opacity. Tap it to open heart rate in Juice</li>
+        <li>New look for the heart rate section</li>
+        <li>My Devices: refresh button; one connected device gets a full-width card</li>
+        <li>Release notes: latest 3 in a scrolling card, older ones on sabrkei.com</li>
+        <li>Fixed: icon picker not scrolling; duplicate 3D icons removed</li>
+        <li>Fixed: battery % cut off in the widget picker preview</li>
+        <li>Charge cycles removed</li>
+    </ul>
+  </details>
+  <details class="card" id="v3-4-0">
+    <summary><span>Version 3.4.0<span class="release-date">15 Nov 2026</span></span></summary>
+    <ul>
+        <li>Juice Pro: new heart rate widget for your Garmin watch, from 1×1 up to 4×4, with averages, today's low and high, resting heart rate and a trend line</li>
+        <li>The small heart rate line on the battery widget is still there for Pro</li>
+        <li>One battery widget: stretch it into a row, a column or a grid (widgets you already placed keep working)</li>
+        <li>My Devices: the connected count at the top is always green, and connection drop warnings are gone</li>
+        <li>Connection stability is no longer shown on device pages</li>
+        <li>Phone charge cycles no longer reset when Juice updates: Juice remembers the last count your phone reported and carries on from it</li>
+    </ul>
+  </details>
+  <details class="card" id="v3-3-0">
+    <summary><span>Version 3.3.0<span class="release-date">14 Nov 2026</span></span></summary>
+    <ul>
+        <li>Juice Pro: your Garmin watch's heart rate in Juice and on your widget, with 5-minute and hourly averages and today's lowest, highest and average</li>
+        <li>Heart rate shows only when your watch reports it, updates about every 5 minutes, and stays on your phone</li>
+        <li>Update the Juice watch app from the Connect IQ Store to get heart rate, plus its new liquid battery look</li>
+        <li>Phone screen: see which apps used the most screen time since you unplugged, with an estimated share of battery used, and show or hide system apps (needs Usage access)</li>
+        <li>Fixed popups and buttons being cut off or unreachable when Font size or Display size is set very large</li>
+    </ul>
+  </details>
+
+  <h2 id="previous-versions">Previous versions</h2>
+  <p>Older releases, newest first.</p>
+  <details class="card" id="v3-2-1">
+    <summary><span>Version 3.2.1<span class="release-date">14 Nov 2026</span></span></summary>
+    <ul>
+        <li>Garmin setup guide now opens the Juice page on sabrkei.com, with a link to the Juice watch app in the Connect IQ Store</li>
+    </ul>
+  </details>
+  <details class="card" id="v3-2-0">
+    <summary><span>Version 3.2.0<span class="release-date">14 Nov 2026</span></span></summary>
+    <ul>
+        <li>Every widget style is now shown as a real preview, with a swipe hint, and Pro styles are visible before you buy</li>
+        <li>New Pro popup: 3D icons, everything Pro includes, one-time payment and free lifetime updates</li>
+        <li>Juice asks for Bluetooth access when you first open it, then shows an animated guide to Unrestricted battery</li>
+        <li>3D icons keep their real colours by default, and Pro uses 3D icons for more device types</li>
+        <li>The app accent colour no longer changes widget previews, which now use green and red as standard</li>
+        <li>Edit a device's icon and name with the pen on its picture</li>
+        <li>Not connected devices say "last known battery level"; "Charge it soon" appears under connected devices</li>
+        <li>Phone charge cycles show the phone's own count, not Juice's</li>
+        <li>The app shows Juice Pro once you've bought it</li>
+    </ul>
+  </details>
+  <details class="card" id="v3-1-3">
+    <summary><span>Version 3.1.3<span class="release-date">13 Nov 2026</span></span></summary>
+    <ul>
+        <li>Fixed: Get Juice Pro could say Google Play can't be reached until Juice was restarted</li>
+    </ul>
+  </details>
+  <details class="card" id="v3-1-1">
+    <summary><span>Version 3.1.1<span class="release-date">13 Nov 2026</span></span></summary>
+    <ul>
+        <li>New Juice Pro screen: see everything Pro includes and unlock it with a one-time payment</li>
+        <li>Tapping any locked style, colour, icon or Garmin option now opens it</li>
+    </ul>
+  </details>
+  <details class="card" id="v3-1-0">
+    <summary><span>Version 3.1.0<span class="release-date">13 Nov 2026</span></span></summary>
+    <ul>
+        <li>Juice Pro: one payment unlocks every widget style, colours, Garmin watches and 3D icons, and follows your Google account to new phones</li>
+        <li>Tapping a widget now opens Juice</li>
+        <li>3D icons keep their own colours in the icon picker</li>
+        <li>The widget picker shows an up-to-date preview of your widget (Android 15+)</li>
+        <li>Garmin watches are found as soon as you open Juice, and any Garmin Connect problem is now shown in Settings</li>
+        <li>Updated for Android 16</li>
+    </ul>
+  </details>
+  <details class="card" id="v3-0-5">
+    <summary><span>Version 3.0.5<span class="release-date">11 Nov 2026</span></span></summary>
+    <ul>
+        <li>The Garmin watch app now works on every compatible Garmin watch, including Forerunner 255/265/955 and Fenix 7/8</li>
+    </ul>
+  </details>
+  <details class="card" id="v3-0-4">
+    <summary><span>Version 3.0.4<span class="release-date">11 Nov 2026</span></span></summary>
+    <ul>
+        <li>New modern Geist font throughout the app</li>
+        <li>A Garmin watch no longer appears twice (once from Bluetooth, once from Garmin Connect)</li>
+        <li>Widgets tab: removed the "Widget 1" title</li>
+        <li>Widget preview: removed stray white dots, and the Light / Dark labels are now centred above their previews</li>
+        <li>Charge cycles now use the count the phone's battery has registered, when the phone shares it</li>
+        <li>Settings now shows release notes</li>
+    </ul>
+  </details>
+  <details class="card" id="v3-0-3">
+    <summary><span>Version 3.0.3<span class="release-date">11 Nov 2026</span></span></summary>
+    <ul>
+        <li>Renamed Orbit to Juice everywhere</li>
+        <li>New Connect IQ app id for the Garmin watch app</li>
+    </ul>
+  </details>
+  <details class="card" id="v3-0-2">
+    <summary><span>Version 3.0.2<span class="release-date">8 Nov 2026</span></span></summary>
+    <ul>
+        <li>Main screen shows Android's battery condition (Good) instead of the capacity estimate</li>
+        <li>Capacity estimate is capped at 100% and labelled as an estimate</li>
+        <li>A reported cycle count of 0 is treated as unknown</li>
+    </ul>
+  </details>
+  <details class="card" id="v3-0-1">
+    <summary><span>Version 3.0.1<span class="release-date">8 Nov 2026</span></span></summary>
+    <ul>
+        <li>Bottom navigation labels centred under their icons</li>
+    </ul>
+  </details>
+  <details class="card" id="v3-0">
+    <summary><span>Version 3.0<span class="release-date">8 Nov 2026</span></span></summary>
+    <ul>
+        <li>Redesign with a dark companion-app look, large device pictures and a selectable accent</li>
+        <li>New name and launcher icon, including a themed monochrome icon</li>
+        <li>New Cards widget style and 60% transparent widget backgrounds</li>
+        <li>Widget previews show light and dark appearance</li>
+    </ul>
+  </details>
+
+  <footer>
+    <a href="../">Juice guide</a> &middot; <a href="../../../#portfolio">Portfolio</a> &middot; &copy; Scott Abraham Keinström
+  </footer>
+</main>
+</body>
+</html>
