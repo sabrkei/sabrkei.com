@@ -139,7 +139,7 @@ createApp({
       {
         title: 'g-client-handover',
         description: 'A CLI tool for generating structured client handover documents for web projects.',
-        image: 'images/g-client-handover.webp',
+        image: 'images/rows/npm.webp',
         link: 'https://www.npmjs.com/package/g-client-handover',
         repo: 'https://github.com/sabrkei/gemini-client-handover',
         npmCommand: 'npx g-client-handover',
