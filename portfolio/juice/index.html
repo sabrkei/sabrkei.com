@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juice – Garmin watch, heart rate and widgets guide | Scott Abraham Keinström</title>
-  <meta name="description" content="Set up the Juice watch app on your Garmin watch, turn on heart rate, and add and customise the battery and heart rate widgets in Juice for Android.">
+  <title>Juice – Battery widgets for Android: guide, setup and support | Scott Abraham Keinström</title>
+  <meta name="description" content="Juice shows the battery of your phone, earbuds, headphones and Garmin watch on your Android home screen, with heart rate, sleep and Body Battery widgets in 11 languages. Setup guide, permissions, troubleshooting and support.">
   <link rel="canonical" href="https://sabrkei.com/portfolio/juice/">
   <link rel="icon" type="image/png" href="../../images/sabrkei-favicon.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
@@ -91,49 +91,132 @@
     .card summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
     .card[open] p { margin-top: 10px; }
     footer { margin-top: 3rem; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.8rem; }
-  </style>
+  
+    .hero { background: #0a0a0b; position: relative; padding: 0; }
+    .hero::before { content: ""; position: absolute; inset: 0; background: url('../../images/juice/runners.webp') 100% 40% / cover no-repeat; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, #0a0a0b 5%, rgba(10,10,11,.8) 35%, rgba(10,10,11,0) 62%); }
+    .hero__inner { position: relative; z-index: 1; display: block; padding: 28px 16px 72px; }
+    .hero__text { max-width: 560px; padding-bottom: 0; }
+    .hero h1 { font-size: clamp(2.2rem, 6vw, 3.8rem); }
+    .hero .accent { color: #c6f04a; }
+    .hero__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+    .btn--ghost { background: transparent !important; color: #ececec !important; border: 2px solid rgba(255,255,255,.45); }
+    main { max-width: 900px; }
+    .toc { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .9rem; margin: 0 0 8px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 16px 0; }
+    .grid .card { margin: 0; }
+    .grid .card p { margin-top: 6px; font-size: .92rem; }
+    .pill { display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .04em; padding: 2px 8px; border-radius: 999px; background: #c6f04a; color: #0a0a0b; vertical-align: middle; margin-left: 6px; }
+    table { width: 100%; border-collapse: collapse; font-size: .92rem; margin: 12px 0 20px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; opacity: .8; }
+    .shots--phone figure { flex-basis: 190px; }
+    .wide img { width: 100%; border-radius: 14px; border: 1px solid var(--line); }
+    .langs { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; }
+    .langs li { margin: 0; padding: 6px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-weight: 700; font-size: .9rem; }
+    .contact { background: var(--accent); color: var(--bg); border-radius: 14px; padding: 22px 24px; margin: 28px 0; }
+    .contact a { color: var(--bg); font-weight: 700; }
+    .contact h2 { margin-top: 0; }
+    @media (max-width: 640px) { table, thead, tbody, tr, th, td { display: block; } thead { display: none; } td { border: 0; padding: 4px 0; } tr { border-bottom: 1px solid var(--line); padding: 10px 0; } }
+</style>
 </head>
 <body>
 <header class="hero">
   <div class="hero__inner">
     <div class="hero__text">
       <a class="back" href="../../#portfolio">&larr; Back to portfolio</a>
-      <img class="hero__icon" src="../../images/juice/watch-app-icon.webp" alt="Juice watch app icon: green-tipped headphones above the word Juice" width="64" height="64">
-      <h1>Juice: Garmin watch, heart rate and widgets</h1>
-      <p class="lead">Show your Garmin watch battery and heart rate in Juice on Android, and put both on your home screen. It takes about five minutes.</p>
-      <p class="hero__note">Garmin watch support is part of <strong>Juice Pro</strong>, a one-time purchase with no subscription. The Juice watch app itself is free.</p>
-      <p><a class="btn" href="https://apps.garmin.com/apps/bd27701b-5439-48e0-8b8d-7846f44ba7ab" target="_blank" rel="noopener noreferrer">Get the Juice watch app on Connect IQ</a></p>
+      <img class="hero__icon" src="../../images/juice/app-icon.webp" alt="Juice app icon: green-tipped headphones" width="64" height="64">
+      <h1>Every battery you own. <span class="accent">On your home screen.</span></h1>
+      <p class="lead">Juice shows the battery of your phone, earbuds, headphones and Garmin watch in one Android app, with widgets you can stretch to any size. Add heart rate, sleep and Body Battery if you run with a Garmin. Available in 11 languages.</p>
+      <p class="hero__note">No account, no ads, no analytics. Everything stays on your phone.</p>
+      <div class="hero__cta">
+        <a class="btn" href="#get-started">Get started</a>
+        <a class="btn btn--ghost" href="#troubleshooting">Troubleshooting</a>
+        <a class="btn btn--ghost" href="privacy/">Privacy policy</a>
+      </div>
     </div>
-    <figure class="hero__shot">
-      <img class="phone" src="../../images/juice/phone-mockup.webp" alt="Samsung Galaxy S26 showing the Juice watch app listing in the Connect IQ Store: 'Your watch battery, on your phone', the watch screens at 8%, 20% and 50%, and a note that the Juice Android app (Pro version) is required" width="600" height="1288">
-    </figure>
   </div>
 </header>
 
 <main>
   <div class="card" style="margin-top:0">
-    <p><strong>New in Juice 3.6.0.</strong> Low battery: a small Low battery · charge soon pill on the device itself, instead of a banner. Fixed: phone battery capacity could read higher than when new. 7 new Pro icons: bulb, lock, remote, sensor, key fob, GPS and circuit earbuds. Removed Drops today from the connection card. Smoother and lighter on battery: widgets only redraw when something changes. <a href="release-notes/">See the full release notes</a>.</p>
+    <p><strong>New:</strong> Juice now speaks 11 languages, opens with a short film and a quick set-up of what you want to track, and has a new 3D icon pack and clearer Garmin cards. <a href="release-notes/">See the release notes</a>.</p>
   </div>
-  <p><strong>On this page:</strong> <a href="#setup">Watch setup</a> &middot; <a href="#heart-rate">Heart rate</a> &middot; <a href="#widgets">Widgets: add, set up and change</a> &middot; <a href="#heart-widget">Heart rate widget</a> &middot; <a href="#troubleshooting">Troubleshooting</a> &middot; <a href="release-notes/">Release notes</a></p>
+  <p class="toc"><strong>On this page:</strong>
+    <a href="#features">Features</a> <a href="#get-started">First launch</a> <a href="#permissions">Permissions</a> <a href="#setup">Garmin watch setup</a> <a href="#heart-rate">Heart rate</a> <a href="#widgets">Widgets</a> <a href="#languages">Languages</a> <a href="#troubleshooting">Troubleshooting</a> <a href="#contact">Contact</a> <a href="privacy/">Privacy</a> <a href="release-notes/">Release notes</a></p>
 
-  <h2>About Juice</h2>
-  <p>Juice shows battery and connection health for your phone, Bluetooth devices and Garmin watch in one Android app, with resizable home-screen widgets. The Garmin support comes from a small companion app that runs on your watch.</p>
   <div class="shots shots--phone">
-    <figure><img src="../../images/juice/devices.webp" alt="Juice 'My devices' screen showing the phone at 82% and a Garmin 255 Music watch at 47%" width="260" height="462" loading="lazy"><figcaption>My devices: phone and watch together</figcaption></figure>
-    <figure><img src="../../images/juice/widgets.webp" alt="Juice home-screen widgets showing phone and Garmin watch battery levels in several styles" width="260" height="462" loading="lazy"><figcaption>Widgets with your watch battery</figcaption></figure>
+    <figure><img src="../../images/juice/s-devices.webp" alt="Juice My devices screen: phone, earbuds, headphones and watch batteries" width="190" height="338" loading="lazy"></figure>
+    <figure><img src="../../images/juice/s-widgets.webp" alt="Juice Add a widget: device, heart rate, sleep, Body Battery and activity" width="190" height="338" loading="lazy"></figure>
+    <figure><img src="../../images/juice/s-health.webp" alt="Juice watch detail and connection health" width="190" height="338" loading="lazy"></figure>
+    <figure><img src="../../images/juice/s-styles.webp" alt="Juice heart rate from a Garmin watch" width="190" height="338" loading="lazy"></figure>
+    <figure><img src="../../images/juice/s-settings.webp" alt="Juice settings with language, appearance and Juice Pro" width="190" height="338" loading="lazy"></figure>
   </div>
 
-  <h2>How it works</h2>
-  <p>Garmin watches don't share their battery over normal Bluetooth. Instead, the Juice app on your watch reads its battery and sends it to your phone through the Garmin Connect app, straight away when opened and then every 5 minutes. Juice on your phone shows it in your widgets. Nothing is sent anywhere else.</p>
+  <h2 id="features">What Juice does</h2>
+  <h3>Free</h3>
+  <div class="grid">
+    <div class="card"><h3>All your batteries</h3><p>This phone (level, wattage, health, temperature) plus connected and recently seen Bluetooth devices with their last known level. AirPods, Beats and Galaxy Buds show left, right and case separately.</p></div>
+    <div class="card"><h3>Connection history</h3><p>A 24-hour timeline for each device, with quick disconnects highlighted, so you can see which earbuds keep dropping out.</p></div>
+    <div class="card"><h3>Alerts</h3><p>A "Needs attention" list for low batteries, and a low-battery pill on the device itself.</p></div>
+    <div class="card"><h3>One resizable widget</h3><p>Stretch it into a row, a column or a grid, from 1&times;1 to 4&times;4. Rings, capsules, batteries, blocks, lines, icons and cards, with live light and dark previews.</p></div>
+    <div class="card"><h3>Make it yours</h3><p>Rename any device, change its icon from a large library, and pick the app accent colour.</p></div>
+    <div class="card"><h3>Screen time by app</h3><p>See which apps used your battery since you unplugged, on the phone card (needs Usage access).</p></div>
+  </div>
+  <h3>Juice Pro <span class="pill">ONE-TIME PURCHASE</span></h3>
+  <p>No subscription. Pay once, keep it, and every future widget, icon and feature is included.</p>
+  <div class="grid">
+    <div class="card"><h3>All styles, colours and 3D icons</h3><p>Every widget style, full colour control and the 3D icon packs, tinted by battery level or in their own true colours.</p></div>
+    <div class="card"><h3>Garmin watch battery</h3><p>Your watch shows up as a device next to your phone and earbuds. Works with every Garmin watch that can run watch apps.</p></div>
+    <div class="card"><h3>Heart rate widget</h3><p>Latest bpm, 5-minute and hourly averages, today's low and high, resting heart rate and a trend line.</p></div>
+    <div class="card"><h3>Sleep widget</h3><p>Last night's total, deep, light, REM and awake time, a stage chart, sleeping heart rate, HRV, SpO&#8322;, a score, and the bedtime Juice suggests for tonight.</p></div>
+    <div class="card"><h3>Body Battery widget</h3><p>Body Battery with today's range and trend, stress, steps, floors, breathing and SpO&#8322;.</p></div>
+    <div class="card"><h3>Activity widget</h3><p>Steps against your goal, distance, active calories, floors, exercise minutes, weight, a seven-day chart and your last workout.</p></div>
+  </div>
+  <div class="wide"><img src="../../images/juice/widget-row.webp" alt="A Juice row widget: phone, earbuds, headphones and watch battery rings" width="900" height="260" loading="lazy"></div>
 
-  <h2>What you need</h2>
+  <h2 id="get-started">First launch</h2>
+  <p>The first time you open Juice (free or Pro) you will see:</p>
+  <ol>
+    <li><strong>A short film and the Juice logo.</strong></li>
+    <li><strong>Choose your language.</strong> The whole app switches to it straight away. You can change it later in <em>Settings &rarr; Language</em>.</li>
+    <li><strong>Tell Juice what you want to track.</strong> Devices, a Garmin watch, app battery use, sleep, Body Battery, activity or heart rate. Juice only shows what you pick and only asks for the permissions those choices need. You can change this any time in <em>Settings</em>.</li>
+    <li><strong>Allow what Juice asks for.</strong> See the permissions below. Everything is optional except Bluetooth for seeing Bluetooth devices.</li>
+    <li><strong>Add a widget</strong> from the <em>Widgets</em> tab, or by long-pressing your home screen.</li>
+  </ol>
+
+  <h2 id="permissions">Permissions: what Juice asks for, and why</h2>
+  <p>Juice only asks for what a feature needs, and explains it first. Android never allows all of these in one popup, so Juice Pro includes a <strong>Set up Juice Pro</strong> screen with an <em>Allow everything</em> button that walks through each Android screen in turn and skips anything already granted. It stays available in Settings while anything is missing.</p>
+  <table>
+    <thead><tr><th>Permission</th><th>Why Juice needs it</th><th>If you say no</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Nearby devices</strong> (Bluetooth connect and scan)</td><td>Reads the battery level of your Bluetooth devices, and the per-earbud level of AirPods, Beats and Galaxy Buds. Never used for location.</td><td>Only the phone's own battery can be shown.</td></tr>
+      <tr><td><strong>Usage access</strong></td><td>Shows screen time by app on the phone card. Android sends you to a special settings screen: find Juice in the list and switch it on.</td><td>The phone card hides the by-app section. Everything else works.</td></tr>
+      <tr><td><strong>Unrestricted battery</strong></td><td>Lets widgets keep updating in the background. On Samsung phones, set Juice's battery use to <em>Unrestricted</em>.</td><td>Android may pause updates, so widgets can look out of date.</td></tr>
+      <tr><td><strong>Health Connect</strong> (read only) <span class="pill">PRO</span></td><td>Sleep, heart rate, resting heart rate, HRV, SpO&#8322;, breathing, steps, distance, active calories, floors, exercise and weight, for the sleep and activity widgets. Garmin Connect writes the data there.</td><td>The sleep and activity widgets show a prompt instead of numbers.</td></tr>
+      <tr><td><strong>Connect IQ via Garmin Connect</strong> <span class="pill">PRO</span></td><td>The Juice watch app sends battery, heart rate, Body Battery, stress, SpO&#8322;, steps, floors and breathing to your phone through the Garmin Connect app.</td><td>The Garmin watch does not appear.</td></tr>
+    </tbody>
+  </table>
+  <p>You can withdraw any permission at any time in Android settings or in Health Connect. Juice reads Health Connect read-only and never writes to it.</p>
+
+  <h2>What you need for Garmin features</h2>
   <ul>
-    <li><strong>Juice Pro</strong> installed on your Android phone (Android 12 or newer).</li>
+    <li><strong>Juice Pro</strong> on your Android phone (Android 12 or newer).</li>
     <li>The <strong>Garmin Connect</strong> app on your phone, with your watch already paired.</li>
-    <li>The <strong>Juice</strong> watch app from the <a href="https://apps.garmin.com/apps/bd27701b-5439-48e0-8b8d-7846f44ba7ab" target="_blank" rel="noopener noreferrer">Connect IQ Store</a>. It's built for every Garmin watch that can run watch apps, including Forerunner 255/265/955 and Fenix 7/8.</li>
+    <li>The <strong>Juice</strong> watch app from the <a href="https://apps.garmin.com/apps/bd27701b-5439-48e0-8b8d-7846f44ba7ab" target="_blank" rel="noopener noreferrer">Connect IQ Store</a>. It's built for every Garmin watch that can run watch apps, including Forerunner 255/265/955 and Fenix 7/8. The watch app itself is free.</li>
+    <li>For sleep and activity: <em>Garmin Connect &rarr; More &rarr; Settings &rarr; Connected apps &rarr; Health Connect</em> switched on.</li>
   </ul>
+  <div class="wide"><img src="../../images/juice/garmin-hero.webp" alt="Juice for Garmin: battery and heart rate on your phone" width="1000" height="500" loading="lazy"></div>
 
-  <h2 id="setup">Watch setup steps</h2>
+  <h2 id="how">How Garmin data reaches your phone</h2>
+  <p>Garmin watches don't share their battery over normal Bluetooth, and Garmin doesn't give watch apps access to sleep. So Juice uses two private routes:</p>
+  <ol>
+    <li><strong>The Juice watch app</strong> sends battery, heart rate, Body Battery, stress, SpO&#8322;, steps, floors and breathing to your phone through Garmin Connect, straight away when opened and then every five minutes.</li>
+    <li><strong>Health Connect</strong> carries sleep, steps, distance, calories, floors, workouts and weight, which Garmin Connect writes there once you switch it on.</li>
+  </ol>
+  <div class="note">Garmin's own sleep score, Body Battery history and sleep coach are not shared with Health Connect. The sleep score on the widget is Juice's own estimate (sleep against your need, deep and REM share, efficiency) and is labelled that way. Anything your watch doesn't record shows as &ldquo;&mdash;&rdquo;.</div>
+
+  <h2 id="setup">Garmin watch setup steps</h2>
   <ol>
     <li><strong>Check your watch is connected.</strong> Open Garmin Connect on your phone and make sure your watch shows as connected.</li>
     <li><strong>Install the watch app.</strong> Open the <a href="https://apps.garmin.com/apps/bd27701b-5439-48e0-8b8d-7846f44ba7ab" target="_blank" rel="noopener noreferrer">Juice page in the Connect IQ Store</a>, or search for <strong>Juice</strong> (developer <strong>sabrkei</strong>) in the Connect IQ Store inside Garmin Connect, and install it on your watch.</li>
@@ -142,77 +225,83 @@
     <li><strong>Add a widget.</strong> In Juice on your phone, add a widget (or edit one) and choose your Garmin watch from the device list.</li>
     <li><strong>Check it's working.</strong> Open Juice's <em>Settings &rarr; Garmin watches</em>. It should say your watch is sending its battery.</li>
   </ol>
-
   <div class="shots shots--watch">
     <figure><img src="../../images/juice/watch-80.webp" alt="Juice watch app showing 80% and 'sent to phone'" width="220" height="220" loading="lazy"><figcaption>The watch app at 80%</figcaption></figure>
     <figure><img src="../../images/juice/watch-20.webp" alt="Juice watch app showing 20% and 'sent to phone'" width="220" height="220" loading="lazy"><figcaption>The watch app at 20%</figcaption></figure>
   </div>
 
-  <h2>Check your settings</h2>
-  <p>For reliable updates, the Settings screen in Juice should show Bluetooth access granted, background updates set to <em>Unrestricted</em>, and live updates on. Juice Pro shows as unlocked once purchased.</p>
-  <div class="shots shots--phone">
-    <figure><img src="../../images/juice/settings.webp" alt="Juice Settings screen with Bluetooth access, background updates and live updates enabled, and 'You have Juice Pro'" width="260" height="462" loading="lazy"><figcaption>Settings: everything enabled, Juice Pro active</figcaption></figure>
-  </div>
-
-  <h2 id="heart-rate">Heart rate from your Garmin watch</h2>
-  <p>With <strong>Juice Pro</strong>, Juice also shows your watch's heart rate: the latest reading, 5-minute and hourly averages, today's lowest, highest and average, and your resting heart rate. It uses the same Juice watch app, so there is nothing extra to install, but the watch app needs to be up to date.</p>
+  <h2 id="heart-rate">Heart rate from your Garmin watch <span class="pill">PRO</span></h2>
+  <p>Juice shows the latest reading, 5-minute and hourly averages, today's lowest, highest and average, and your resting heart rate. It uses the same Juice watch app, so there is nothing extra to install, but the watch app needs to be up to date.</p>
   <div class="note"><strong>Good to know.</strong> Heart rate updates about every 5 minutes, it isn't live. It only appears when your watch reports it (a watch without a heart rate sensor sends none), and it stays on your phone: it is never uploaded.</div>
-
-  <h3>Turn it on</h3>
   <ol>
-    <li><strong>Update the watch app.</strong> Open the Juice page in the Connect IQ Store (link above) and update Juice on your watch, then let Garmin Connect sync.</li>
-    <li><strong>Open Juice on the watch once.</strong> It sends its battery and heart rate to your phone, then every 5 minutes.</li>
-    <li><strong>Open your watch in Juice.</strong> On the <em>My devices</em> screen, tap your Garmin watch. Scroll down to the <strong>Heart rate</strong> card.</li>
+    <li><strong>Update the watch app</strong> from the Connect IQ Store and let Garmin Connect sync.</li>
+    <li><strong>Open Juice on the watch once.</strong></li>
+    <li><strong>Open your watch in Juice.</strong> On <em>My devices</em>, tap your Garmin watch and scroll to the <strong>Heart rate</strong> card.</li>
     <li><strong>Switch on &ldquo;Show heart rate from my watch&rdquo;.</strong> If it says it is waiting, give it up to five minutes and open Juice on the watch again.</li>
   </ol>
   <div class="shots shots--phone">
-    <figure><img src="../../images/juice/guide-heart-enable.gif" alt="Animation: tap the Garmin watch on My devices, scroll to the Heart rate card and switch on Show heart rate from my watch; the current bpm, averages and resting heart rate appear" width="260" height="520" loading="lazy"><figcaption>Turning on heart rate (illustration of the steps)</figcaption></figure>
+    <figure><img src="../../images/juice/guide-heart-enable.gif" alt="Animation: tap the Garmin watch on My devices, scroll to the Heart rate card and switch on Show heart rate from my watch" width="260" height="520" loading="lazy"><figcaption>Turning on heart rate (illustration of the steps)</figcaption></figure>
   </div>
 
   <h2 id="widgets">Widgets: add, set up and change</h2>
-  <p>Juice has two home-screen widgets: the <strong>battery widget</strong> for your phone, Bluetooth devices and watch, and (Juice Pro) the <strong>heart rate widget</strong>. Both resize on the home screen, and both open Juice when you tap them.</p>
-
-  <h3>Battery widget</h3>
+  <p>All Juice widgets resize from 1&times;1 to 4&times;4 and show more as they grow. Tapping a widget opens Juice (or Garmin Connect, or its settings if it still needs access).</p>
+  <h3>Add a widget</h3>
   <ol>
-    <li><strong>Add it.</strong> In Juice open the <em>Widgets</em> tab, choose a style and tap <em>Add to home screen</em>. Or long-press your home screen, choose <em>Widgets</em>, find <strong>Juice batteries</strong> and drag it out.</li>
-    <li><strong>Pick its devices.</strong> The settings screen opens when you place it. Tick the devices to show (up to 8: your phone, Bluetooth devices and Garmin watches).</li>
-    <li><strong>Make it fit.</strong> Stretch or shrink it on the home screen, from 1&times;1 up to 4&times;4. One widget does every shape: a row, a column or a grid.</li>
-    <li><strong>Change it any time.</strong> In Juice, <em>Widgets</em> tab &rarr; <em>Edit widget</em> (or long-press the widget on your home screen and choose its settings, if your launcher offers that).</li>
+    <li><strong>In Juice:</strong> open the <em>Widgets</em> tab, choose a widget and tap <em>Add to home screen</em>. Android asks where to put it.</li>
+    <li><strong>Or from your home screen:</strong> long-press, choose <em>Widgets</em>, find <strong>Juice</strong> and drag one out. The previews follow your phone's light or dark theme.</li>
+    <li><strong>Pick its devices and look.</strong> The settings screen opens when you place it. Tick up to 8 devices, then choose style, light/dark/auto, accent colour, background and opacity, and whether device names show.</li>
+    <li><strong>Change it any time:</strong> <em>Widgets</em> tab &rarr; <em>Edit widget</em>, or long-press the widget on your home screen and open its settings.</li>
   </ol>
-  <p>In the widget settings you can change the style (ring, capsule, battery, blocks, line, icon or cards), light, dark or follow-the-phone appearance, the accent, low-battery and charging colours, the background colour and opacity, whether device names show, and, with Juice Pro, 3D icons in their own colours and a small heart rate line under your watch's battery.</p>
-
-  <h2 id="heart-widget">Heart rate widget (Juice Pro)</h2>
-  <p>A separate widget for your watch's heart rate. Stretch it from 1&times;1 to 4&times;4 and it shows more as it grows:</p>
-  <ul>
-    <li><strong>Small (1&times;1, 2&times;1):</strong> a heart and the latest bpm.</li>
-    <li><strong>Wide (3&times;1, 4&times;1):</strong> bpm plus up to three of today's figures.</li>
-    <li><strong>Square (2&times;2, 3&times;2):</strong> bpm, resting and average, and today's low-to-high range bar.</li>
-    <li><strong>Large (4&times;2 and up):</strong> everything the watch sends, a trend line and the range bar.</li>
-  </ul>
-  <h3>Add and set it up</h3>
-  <ol>
-    <li><strong>Add it.</strong> In Juice open <em>Widgets</em> and tap <em>Add heart rate widget</em> (below the battery widget), or find <strong>Juice heart rate</strong> in your home screen's widget list. It only appears once Juice Pro is unlocked.</li>
-    <li><strong>Choose how it looks.</strong> The settings screen opens when you place it: pick an accent colour (or any custom colour), <em>Auto</em>, <em>Light</em> or <em>Dark</em>, and the background opacity. Turn on a custom background colour if you want one.</li>
-    <li><strong>Change it later.</strong> Long-press the widget and choose its settings, or remove it and add it again. Settings are kept per widget, so each can look different.</li>
-    <li><strong>Tap it.</strong> Tapping the widget opens Juice on your watch page, already scrolled to the heart rate section.</li>
-  </ol>
-  <p>An older reading stays on the widget but greyed, so it never passes for a live number. Until your watch has sent a reading, the widget shows sample numbers in the Widgets tab and a prompt to open Juice on the watch.</p>
+  <div class="grid">
+    <div class="card"><h3>Battery widget</h3><p>Phone, Bluetooth devices and watch. Rings, capsules, batteries, blocks, lines, icons and cards. Rename devices and change their icons.</p></div>
+    <div class="card"><h3>Heart rate widget <span class="pill">PRO</span></h3><p>Small: bpm. Wide: plus today's figures. Square: resting, average and range bar. Large: everything plus a trend line.</p></div>
+    <div class="card"><h3>Sleep widget <span class="pill">PRO</span></h3><p>Duration, stages, score and tonight's suggested bedtime. Set your wake-up time and the sleep you need in its settings.</p></div>
+    <div class="card"><h3>Body Battery widget <span class="pill">PRO</span></h3><p>Energy, stress, steps, floors, breathing and SpO&#8322; from your watch.</p></div>
+    <div class="card"><h3>Activity widget <span class="pill">PRO</span></h3><p>Steps against your goal and a seven-day chart, plus distance, calories and your last workout.</p></div>
+  </div>
+  <p>An older heart rate or Body Battery reading stays on the widget but greyed, so it never passes for a live number. Until your watch has sent data, widgets show sample numbers in the Widgets tab and a prompt to open Juice on the watch.</p>
+  <p><strong>Suggested bedtime</strong> = wake-up time (from your recent nights, or one you set) minus the sleep you need, minus 15 minutes to fall asleep, plus up to 45 minutes of catch-up after short nights.</p>
   <div class="shots shots--phone">
-    <figure><img src="../../images/juice/guide-heart-widget.gif" alt="Animation: tap Add heart rate widget, the widget lands on the home screen, then change its accent colour, light or dark look and opacity in its settings" width="260" height="520" loading="lazy"><figcaption>Adding and customising the heart rate widget (illustration of the steps)</figcaption></figure>
+    <figure><img src="../../images/juice/guide-heart-widget.gif" alt="Animation: tap Add heart rate widget, then change its accent colour, light or dark look and opacity" width="260" height="520" loading="lazy"><figcaption>Adding and customising a widget (illustration of the steps)</figcaption></figure>
   </div>
 
+  <h2 id="languages">Languages</h2>
+  <p>Juice is fully translated into the language you choose, including widgets and device names. Pick yours on first launch, or change it in <em>Settings &rarr; Language</em> (it also appears under Android's per-app language settings).</p>
+  <ul class="langs"><li>English</li><li>Deutsch</li><li>Fran&ccedil;ais</li><li>Espa&ntilde;ol</li><li>Italiano</li><li>Nederlands</li><li>Polski</li><li>Portugu&ecirc;s</li><li>Svenska</li><li>Norsk</li><li>Dansk</li></ul>
+  <p>The Garmin watch app and this website are in English.</p>
+
   <h2 id="troubleshooting">Troubleshooting</h2>
+  <h3>Devices and Bluetooth</h3>
+  <details class="card"><summary>My Bluetooth device isn't listed</summary><p>Pair it in Android settings first, switch it on and connect it once. Check Juice has <em>Nearby devices</em> permission (Settings &rarr; Apps &rarr; Juice &rarr; Permissions). Only devices that report a battery level (Bluetooth Low Energy, or via the maker's own app) can show one: if a device doesn't report it, Juice can't show it.</p></details>
+  <details class="card"><summary>A device shows a level but it's out of date</summary><p>Juice shows the last known level in grey, with when it was last seen. It refreshes when the device connects again. Earbuds in a closed case only update when the lid opens.</p></details>
+  <details class="card"><summary>AirPods or Galaxy Buds show one combined number</summary><p>AirPods and Beats can show left, right and case if you allow <em>Nearby devices</em>. Galaxy Buds are experimental: if Galaxy Wearable already uses the connection, Juice shows one combined number. Other brands only share one combined number with Android, so they can't be split.</p></details>
+  <details class="card"><summary>Widgets look stale or stop updating</summary><p>Android may be stopping Juice in the background. Set Juice's battery use to <em>Unrestricted</em> (Settings &rarr; Apps &rarr; Juice &rarr; Battery). On Samsung also remove Juice from <em>Sleeping apps</em> and <em>Deep sleeping apps</em> in Device care. Juice shows a reminder on the Devices tab when this is needed.</p></details>
+  <details class="card"><summary>My widget doesn't appear in the widget list</summary><p>Open Juice once so it registers its widgets, then restart your launcher. Heart rate, sleep, Body Battery and activity widgets only appear once Juice Pro is unlocked.</p></details>
+  <details class="card"><summary>My widget changes didn't show</summary><p>Open Juice once so the widget refreshes. Use <em>Widgets &rarr; Edit widget</em>, or long-press the widget and open its settings.</p></details>
+  <details class="card"><summary>The widget preview in the picker looks wrong</summary><p>Previews are generated on your phone and follow its light or dark theme. Android limits how often apps can update them, so after a change give it a minute and reopen the picker.</p></details>
+  <h3>Garmin watch</h3>
   <details class="card"><summary>"No watch has reported yet"</summary><p>Open the Juice app on the watch once, make sure Garmin Connect shows the watch connected, then tap a Juice widget on your phone to ask for a fresh reading.</p></details>
-  <details class="card"><summary>Watch missing from the device list</summary><p>Open Garmin Connect, wait for it to sync, then reopen Juice. Juice only sees watches Garmin Connect knows about.</p></details>
-  <details class="card"><summary>Battery looks stale</summary><p>Android may be stopping Juice in the background. In Android settings set Juice's battery usage to <em>Unrestricted</em>, and keep Garmin Connect allowed to run in the background too.</p></details>
-  <details class="card"><summary>No heart rate showing</summary><p>Update the Juice watch app from the Connect IQ Store, open it on the watch once, and switch on <em>Show heart rate from my watch</em> in the Heart rate card on your watch's page. It can take up to five minutes. A watch without a heart rate sensor, or one that hasn't recorded a recent reading, sends none.</p></details>
-  <details class="card"><summary>The heart rate widget isn't in my widget list</summary><p>It is part of Juice Pro. Once Pro is unlocked, open Juice once and it appears in the widget list. Restart your launcher if it still isn't there.</p></details>
-  <details class="card"><summary>The heart rate number is greyed out</summary><p>That reading is older than about half an hour. Open Juice on the watch, check Garmin Connect shows the watch connected, and wait a few minutes.</p></details>
-  <details class="card"><summary>My widget changes didn't show</summary><p>Open Juice once so the widget refreshes. For the battery widget use <em>Widgets &rarr; Edit widget</em>; the heart rate widget's settings open from the widget itself.</p></details>
-  <details class="card"><summary>Still stuck?</summary><p>Reinstall the Juice watch app from the Connect IQ Store, force-stop Garmin Connect and open it again, then repeat steps 4&ndash;6.</p></details>
+  <details class="card"><summary>Watch missing from the device list</summary><p>Open Garmin Connect, wait for it to sync, then reopen Juice. Juice only sees watches Garmin Connect knows about, and needs the Juice watch app installed. Garmin support needs Juice Pro.</p></details>
+  <details class="card"><summary>Watch battery looks stale</summary><p>Keep Garmin Connect allowed to run in the background (battery <em>Unrestricted</em>), and Juice too. The watch sends its battery every 5 minutes while connected.</p></details>
+  <details class="card"><summary>No heart rate, or it's greyed out</summary><p>Update the Juice watch app from the Connect IQ Store, open it on the watch once, and switch on <em>Show heart rate from my watch</em> on your watch's page. It can take up to five minutes. A watch without a heart rate sensor sends none. A greyed number is older than about half an hour.</p></details>
+  <details class="card"><summary>Body Battery, stress or SpO&#8322; show &ldquo;&mdash;&rdquo;</summary><p>Update the Juice watch app: the latest version asks for one extra Connect IQ permission, <em>SensorHistory</em>. Accept it in Garmin Connect when it appears, then open Juice on the watch. Watches that don't record a value show &ldquo;&mdash;&rdquo;.</p></details>
+  <h3>Sleep and activity</h3>
+  <details class="card"><summary>The sleep or activity widget says "Connect" or shows no data</summary><p>Tap it and allow Health Connect. Then in Garmin Connect go to <em>More &rarr; Settings &rarr; Connected apps &rarr; Health Connect</em> and switch on sleep, steps and the other data. Open Garmin Connect to sync. If Health Connect isn't installed or needs an update, Juice shows a button to get it.</p></details>
+  <details class="card"><summary>Last night's sleep is missing</summary><p>Open Garmin Connect so it syncs the night to Health Connect, then open Juice. Data can take a few minutes to arrive.</p></details>
+  <details class="card"><summary>The sleep score is different from Garmin's</summary><p>Garmin doesn't share its sleep score with Health Connect, so Juice calculates its own estimate and labels it that way.</p></details>
+  <h3>Language and purchases</h3>
+  <details class="card"><summary>How do I change the language?</summary><p><em>Settings &rarr; Language</em> in Juice. You can also use Android's per-app language setting (on Samsung: Settings &rarr; General management &rarr; Language &rarr; App language).</p></details>
+  <details class="card"><summary>I bought Juice Pro but it shows as locked</summary><p>Open <em>Settings &rarr; Juice Pro &rarr; Restore purchases</em>. Make sure you're signed in to the Google account that bought it in the Play Store. If it still doesn't unlock, <a href="#contact">contact support</a> with your order number.</p></details>
+  <details class="card"><summary>Still stuck?</summary><p>Reinstall the Juice watch app from the Connect IQ Store, force-stop Garmin Connect and open it again, then repeat the watch setup steps. If that doesn't fix it, contact us below.</p></details>
+
+  <section class="contact" id="contact">
+    <h2>Contact and support</h2>
+    <p>Still need help, found a bug or have an idea? Email <a href="mailto:contact@gbg-web.com?subject=Juice%20support">contact@gbg-web.com</a>.</p>
+    <p>To help us fix it quickly, include your phone model, Android version, the Juice version (<em>Settings</em>, at the bottom), your Garmin watch model if it's about the watch, and what you expected to happen.</p>
+  </section>
 
   <footer>
-    <a href="release-notes/">Release notes</a> &middot; <a href="../../#portfolio">Portfolio</a> &middot; &copy; Scott Abraham Keinström
+    <a href="privacy/">Privacy policy</a> &middot; <a href="release-notes/">Release notes</a> &middot; <a href="../../#portfolio">Portfolio</a> &middot; <a href="mailto:contact@gbg-web.com">contact@gbg-web.com</a> &middot; &copy; Scott Abraham Keinstr&ouml;m
   </footer>
 </main>
 </body>
