@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><defs>
+<linearGradient id="band" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="0.55" stop-color="#f1f2f4"/><stop offset="1" stop-color="#cfd3d8"/></linearGradient>
+<linearGradient id="cap" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#dfe2e6"/></linearGradient>
+<linearGradient id="lime" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#dcff6e"/><stop offset="0.45" stop-color="#c8f04a"/><stop offset="1" stop-color="#a3cc2e"/></linearGradient>
+<linearGradient id="limeSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffffff" stop-opacity="0.28"/><stop offset="0.35" stop-color="#ffffff" stop-opacity="0"/><stop offset="0.75" stop-color="#000000" stop-opacity="0"/><stop offset="1" stop-color="#3d5200" stop-opacity="0.22"/></linearGradient>
+<clipPath id="cupL"><rect x="147" y="198" width="54" height="90" rx="27"/></clipPath>
+<clipPath id="cupR"><rect x="299" y="198" width="54" height="90" rx="27"/></clipPath>
+<filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+<feGaussianBlur in="SourceAlpha" stdDeviation="7"/><feOffset dy="7" result="b"/>
+<feFlood flood-color="#000000" flood-opacity="0.55"/><feComposite in2="b" operator="in"/>
+<feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<radialGradient id="tile" cx="0.5" cy="0" r="1.05" fx="0.5" fy="0"><stop offset="0" stop-color="#2a2d33"/><stop offset="0.67" stop-color="#141518"/><stop offset="1" stop-color="#141518"/></radialGradient>
+<linearGradient id="tileHi" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/><stop offset="0.04" stop-color="#ffffff" stop-opacity="0"/></linearGradient>
+</defs><rect x="0" y="0" width="1024" height="1024" rx="229.07" fill="url(#tile)"/><rect x="0" y="0" width="1024" height="1024" rx="229.07" fill="url(#tileHi)"/><svg x="148.48" y="200.95" width="727.04" height="663.06" viewBox="125 78 250 228" overflow="visible"><g filter="url(#shadow)">
+<path d="M174 214 V185 a76 76 0 0 1 152 0 V214" stroke="url(#band)" stroke-width="24" fill="none"/>
+<path d="M168.5 214 V185 a81.5 81.5 0 0 1 163 0 V214" stroke="#ffffff" stroke-opacity="0.9" stroke-width="3" fill="none"/>
+<path d="M180 214 V185 a70 70 0 0 1 140 0 V214" stroke="#9aa1aa" stroke-opacity="0.45" stroke-width="3" fill="none"/>
+<g clip-path="url(#cupL)">
+<rect x="147" y="198" width="54" height="90" fill="url(#lime)"/>
+<rect x="147" y="198" width="54" height="90" fill="url(#limeSide)"/>
+<rect x="147" y="225" width="54" height="5" fill="#4a6100" fill-opacity="0.28"/>
+<path d="M147 226 V225 a27 27 0 0 1 54 0 V226 Z" fill="url(#cap)"/>
+<path d="M152 224 a22 22 0 0 1 44 0" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<rect x="155" y="234" width="6" height="40" rx="3" fill="#ffffff" fill-opacity="0.32"/>
+</g>
+<rect x="147.75" y="198.75" width="52.5" height="88.5" rx="26.25" fill="none" stroke="#000000" stroke-opacity="0.18" stroke-width="1.5"/>
+<g clip-path="url(#cupR)">
+<rect x="299" y="198" width="54" height="90" fill="url(#lime)"/>
+<rect x="299" y="198" width="54" height="90" fill="url(#limeSide)"/>
+<rect x="299" y="225" width="54" height="5" fill="#4a6100" fill-opacity="0.28"/>
+<path d="M299 226 V225 a27 27 0 0 1 54 0 V226 Z" fill="url(#cap)"/>
+<path d="M304 224 a22 22 0 0 1 44 0" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<rect x="307" y="234" width="6" height="40" rx="3" fill="#ffffff" fill-opacity="0.32"/>
+</g>
+<rect x="299.75" y="198.75" width="52.5" height="88.5" rx="26.25" fill="none" stroke="#000000" stroke-opacity="0.18" stroke-width="1.5"/>
+</g></svg></svg>
